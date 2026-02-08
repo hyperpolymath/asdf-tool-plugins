@@ -1,0 +1,14 @@
+= asdf Tool Plugins
+// SPDX-License-Identifier: PMPL-1.0-or-later
+
+Hyperpolymath's collection of asdf plugins for installing and managing development tools and runtimes.
+
+Each subdirectory is a standalone asdf plugin that can be installed via `asdf plugin add`.
+
+== License
+
+PMPL-1.0-or-later
+
+== Author
+
+Jonathan D.A. Jewell <jonathan.jewell@open.ac.uk>
