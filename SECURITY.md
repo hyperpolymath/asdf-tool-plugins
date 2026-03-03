@@ -4,7 +4,7 @@
 ============================================================================
 TEMPLATE INSTRUCTIONS (delete this block before publishing)
 ============================================================================
-Replace all {{PLACEHOLDER}} values with your information:
+Replace all asdf-tool-plugins values with your information:
   asdf-tool-plugins     - Your project name
   hyperpolymath            - GitHub username or org (e.g., hyperpolymath)
   asdf-tool-plugins             - Repository name

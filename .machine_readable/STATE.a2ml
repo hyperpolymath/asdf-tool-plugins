@@ -1,0 +1,16 @@
+# ASDF Tool Plugins State Manifest (A2ML)
+@state { version: "0.1.0", last-updated: "2026-03-03", status: "active" }
+
+@project-context:
+name: "asdf-tool-plugins"
+tagline: "Comprehensive collection of asdf version manager plugins"
+repo: "github.com/hyperpolymath/asdf-tool-plugins"
+completion-percentage: 70
+phase: "active-maintenance"
+@end
+
+@attestation:
+originalBytes: [Attested by Gemini CLI]
+signature: PLACEHOLDER-ED25519-SIGNATURE
+timestamp: 2026-03-03T12:00:00Z
+@end
