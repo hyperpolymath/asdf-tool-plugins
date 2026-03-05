@@ -482,3 +482,8 @@ sync-metadata:
         sed -i "s/(completion-percentage [0-9]\+)/(completion-percentage $COMPLETION)/" .machine_readable/STATE.scm
         echo "✓ Metadata synchronized"
     fi
+
+# [AUTO-GENERATED] Multi-arch / RISC-V target
+build-riscv:
+	@echo "Building for RISC-V..."
+	cross build --target riscv64gc-unknown-linux-gnu
