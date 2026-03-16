@@ -5,6 +5,7 @@
 //! - L2: Sled embedded database
 //! - L3: Filesystem cache
 
+#![forbid(unsafe_code)]
 pub mod error;
 pub mod l1;
 pub mod l2;

@@ -1,5 +1,6 @@
 //! asdf-monitor - Real-time monitoring and metrics dashboard
 
+#![forbid(unsafe_code)]
 use anyhow::Result;
 use asdf_core::Plugin;
 use asdf_metrics::{MetricsCollector, MetricsReporter};

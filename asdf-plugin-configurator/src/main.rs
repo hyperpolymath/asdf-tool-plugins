@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: PMPL-1.0-or-later
 //! asdf-config: Declarative configuration management for asdf plugins
 
+#![forbid(unsafe_code)]
 use anyhow::Result;
 use clap::{Parser, Subcommand};
 use colored::Colorize;

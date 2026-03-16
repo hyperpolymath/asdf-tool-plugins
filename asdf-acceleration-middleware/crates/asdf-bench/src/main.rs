@@ -1,5 +1,6 @@
 //! asdf-bench - Benchmarking tool for asdf operations
 
+#![forbid(unsafe_code)]
 use anyhow::Result;
 use asdf_core::Plugin;
 use asdf_metrics::{Metrics, MetricsCollector, MetricsReporter, SystemInfo};

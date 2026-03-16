@@ -1,5 +1,6 @@
 //! Metrics and monitoring for asdf operations
 
+#![forbid(unsafe_code)]
 pub mod collector;
 pub mod error;
 pub mod reporter;

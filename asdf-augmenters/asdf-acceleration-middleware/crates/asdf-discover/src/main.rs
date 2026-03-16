@@ -1,5 +1,6 @@
 //! asdf-discover - Auto-discovery tool for asdf runtimes
 
+#![forbid(unsafe_code)]
 use anyhow::Result;
 use asdf_core::{Plugin, Runtime};
 use clap::{Parser, Subcommand};

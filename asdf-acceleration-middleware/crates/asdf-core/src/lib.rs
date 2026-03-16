@@ -3,6 +3,7 @@
 //! This crate provides the fundamental types and operations for interacting
 //! with asdf, the extendable version manager.
 
+#![forbid(unsafe_code)]
 pub mod error;
 pub mod plugin;
 pub mod runtime;

@@ -1,5 +1,6 @@
 //! Configuration management for asdf-acceleration-middleware
 
+#![forbid(unsafe_code)]
 pub mod error;
 pub mod loader;
 pub mod schema;

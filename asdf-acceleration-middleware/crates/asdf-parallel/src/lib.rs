@@ -1,5 +1,6 @@
 //! Parallel execution engine for asdf operations using Rayon
 
+#![forbid(unsafe_code)]
 pub mod error;
 pub mod executor;
 pub mod strategy;
