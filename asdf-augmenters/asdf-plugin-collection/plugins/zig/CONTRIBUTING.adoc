@@ -27,4 +27,4 @@ asdf plugin test zig . --asdf-tool-version latest
 
 == License
 
-Contributions are licensed under AGPL-3.0-or-later.
+Contributions are licensed under PMPL-1.0-or-later.

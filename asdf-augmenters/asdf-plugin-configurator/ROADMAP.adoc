@@ -80,7 +80,7 @@ docs/          # Documentation
 ----
 * [ ] Initialize Rust project with Cargo
 * [ ] Add shell script linting (shellcheck)
-* [ ] Create LICENSE file (AGPL-3.0-or-later)
+* [ ] Create LICENSE file (PMPL-1.0-or-later)
 * [ ] Create CONTRIBUTING.md guidelines
 * [ ] Create SECURITY.md policy
 

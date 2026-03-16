@@ -63,7 +63,7 @@ Terminal user interface plugin for asdf version manager.
 
 | SPDX licensing
 | icon:check[role=green] Done
-| AGPL-3.0-or-later headers
+| PMPL-1.0-or-later headers
 |===
 
 == Contributing
