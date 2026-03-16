@@ -36,13 +36,13 @@ jobs:
             use-cross: false
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
 
       - uses: dtolnay/rust-toolchain@stable
         with:
           targets: ${{ matrix.target }}
 
-      - uses: Swatinem/rust-cache@v2
+      - uses: Swatinem/rust-cache@779680da715d629ac1d338a641029a2f4372abb5 # v2
 
       - name: Install cross
         if: matrix.use-cross
@@ -85,7 +85,7 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
 
       - uses: actions/download-artifact@v3
         with:
@@ -104,6 +104,6 @@ jobs:
     needs: release
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
       - uses: dtolnay/rust-toolchain@stable
       - run: cargo publish --token ${{ secrets.CARGO_TOKEN }}
