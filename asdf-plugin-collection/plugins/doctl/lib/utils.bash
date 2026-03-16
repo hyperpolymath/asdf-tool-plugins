@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: PMPL-1.0-or-later
 set -euo pipefail
 readonly REPO="digitalocean/doctl"
 export TOOL_NAME="doctl" TOOL_CMD="doctl"

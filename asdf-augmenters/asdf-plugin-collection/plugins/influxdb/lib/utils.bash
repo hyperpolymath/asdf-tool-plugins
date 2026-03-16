@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: PMPL-1.0-or-later
 set -euo pipefail
 readonly REPO="influxdata/influxdb"
 export TOOL_NAME="influxdb" TOOL_CMD="influxdb"

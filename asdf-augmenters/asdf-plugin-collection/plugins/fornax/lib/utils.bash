@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: PMPL-1.0-or-later
 set -euo pipefail
 readonly REPO="ionide/Fornax"
 export TOOL_NAME="fornax" TOOL_CMD="fornax"

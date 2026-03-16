@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: PMPL-1.0-or-later
 set -euo pipefail
 
 TOOL_NAME="asdf-security"
@@ -38,7 +38,7 @@ VULNDB
   # Create the main asdf-security executable with full implementation
   cat > "$install_path/bin/asdf-security" << 'SCRIPT'
 #!/usr/bin/env bash
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: PMPL-1.0-or-later
 # asdf-security - Security scanning for asdf plugins
 set -euo pipefail
 
