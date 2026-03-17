@@ -1,0 +1,6 @@
+# 📋 MAINTENANCE CHECKLIST: asdf-tool-plugins
+
+# Build & Deploy
+- [x] Pivot to boj-server (unified build)
+- [x] Nuke legacy Jekyll workflows
+- [ ] Verify Casket build output
