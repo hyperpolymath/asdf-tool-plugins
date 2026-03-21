@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# SPDX-License-Identifier: PMPL-1.0-or-later
+
+echo "Ephapax — a dyadic language with affine and linear types."
+echo ""
+echo "Provides: ephapax (compiler), ephapax-lsp (language server),"
+echo "          ephapax-dap (debugger), ephapaxiser (linearity enforcer)"
+echo ""
+echo "Homepage: https://github.com/hyperpolymath/ephapax"

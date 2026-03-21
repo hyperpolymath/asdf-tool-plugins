@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# SPDX-License-Identifier: PMPL-1.0-or-later
+# Get the latest stable Ephapax version.
+
+set -euo pipefail
+
+current_script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# shellcheck source=../lib/utils.bash
+source "${current_script_dir}/../lib/utils.bash"
+
+check_dependencies
+get_latest_stable

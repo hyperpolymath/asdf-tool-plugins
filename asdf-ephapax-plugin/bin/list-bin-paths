@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# SPDX-License-Identifier: PMPL-1.0-or-later
+# List binary paths for Ephapax installation.
+# Provides: ephapax, ephapax-lsp, ephapax-dap, ephapaxiser
+
+echo "bin"

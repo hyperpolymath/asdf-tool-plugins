@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+# SPDX-License-Identifier: PMPL-1.0-or-later
+# Download Ephapax release archive to ASDF_DOWNLOAD_PATH.
+
+set -euo pipefail
+
+current_script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# shellcheck source=../lib/utils.bash
+source "${current_script_dir}/../lib/utils.bash"
+
+check_dependencies
+
+if [[ "${ASDF_INSTALL_TYPE:-}" != "version" ]]; then
+  fail "asdf-ephapax only supports release versions, not refs"
+fi
+
+download_path="${ASDF_DOWNLOAD_PATH:?ASDF_DOWNLOAD_PATH is required}"
+version="${ASDF_INSTALL_VERSION:?ASDF_INSTALL_VERSION is required}"
+
+mkdir -p "${download_path}"
+
+url="$(get_download_url "${version}")"
+archive="${download_path}/ephapax-${version}.tar.gz"
+
+download_file "${url}" "${archive}"
+
+log_info "Extracting to ${download_path}..."
+tar -xzf "${archive}" -C "${download_path}" --strip-components=1
+
+rm -f "${archive}"
+
+log_success "Downloaded ephapax ${version}"

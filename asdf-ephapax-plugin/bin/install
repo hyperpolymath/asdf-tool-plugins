@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+# SPDX-License-Identifier: PMPL-1.0-or-later
+# Install Ephapax from ASDF_DOWNLOAD_PATH to ASDF_INSTALL_PATH.
+
+set -euo pipefail
+
+current_script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# shellcheck source=../lib/utils.bash
+source "${current_script_dir}/../lib/utils.bash"
+
+install_path="${ASDF_INSTALL_PATH:?ASDF_INSTALL_PATH is required}"
+download_path="${ASDF_DOWNLOAD_PATH:-}"
+
+mkdir -p "${install_path}/bin"
+
+if [[ -z "${download_path}" ]] || [[ ! -d "${download_path}" ]]; then
+  # No download path — download to temp dir first
+  tmp_download="${install_path}/tmp_download"
+  mkdir -p "${tmp_download}"
+
+  export ASDF_DOWNLOAD_PATH="${tmp_download}"
+  "${current_script_dir}/download"
+  download_path="${tmp_download}"
+fi
+
+# Copy downloaded files to install path
+cp -r "${download_path}"/* "${install_path}/bin/" 2>/dev/null || true
+
+# Ensure the ephapax binary is executable
+if [[ -f "${install_path}/bin/ephapax" ]]; then
+  chmod +x "${install_path}/bin/ephapax"
+elif [[ -f "${install_path}/bin/ephapax-cli" ]]; then
+  chmod +x "${install_path}/bin/ephapax-cli"
+  ln -sf "${install_path}/bin/ephapax-cli" "${install_path}/bin/ephapax"
+fi
+
+# Also make supporting tools executable if present
+for tool in ephapax-lsp ephapax-dap ephapaxiser; do
+  if [[ -f "${install_path}/bin/${tool}" ]]; then
+    chmod +x "${install_path}/bin/${tool}"
+  fi
+done
+
+# Clean up tmp download if we created it
+if [[ -d "${install_path}/tmp_download" ]]; then
+  rm -rf "${install_path}/tmp_download"
+fi
+
+# Verify installation
+if [[ -x "${install_path}/bin/ephapax" ]]; then
+  local_version=$("${install_path}/bin/ephapax" --version 2>/dev/null || echo "unknown")
+  log_success "Installed ephapax ${local_version} to ${install_path}"
+else
+  log_warn "ephapax binary not found — release may not include pre-built binaries yet"
+  log_info "Build from source: cd ${install_path} && just build"
+fi
