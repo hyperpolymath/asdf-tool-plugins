@@ -40,7 +40,7 @@ help recipe="":
 
 # Show this project's info
 info:
-    @echo "Project: {{project}}"
+    @echo "Project: asdf-tool-plugins"
     @echo "Version: {{version}}"
     @echo "RSR Tier: {{tier}}"
     @echo "Recipes: $(just --summary | wc -w)"
@@ -52,7 +52,7 @@ info:
 
 # Build the project (debug mode)
 build *args:
-    @echo "Building {{project}} (debug)..."
+    @echo "Building asdf-tool-plugins (debug)..."
     # TODO: Replace with your build command
     # Examples:
     #   cargo build {{args}}                    # Rust
@@ -63,7 +63,7 @@ build *args:
 
 # Build in release mode with optimizations
 build-release *args:
-    @echo "Building {{project}} (release)..."
+    @echo "Building asdf-tool-plugins (release)..."
     # TODO: Replace with your release build command
     # Examples:
     #   cargo build --release {{args}}
@@ -171,7 +171,7 @@ run-verbose *args: build
 
 # Install to user path
 install: build-release
-    @echo "Installing {{project}}..."
+    @echo "Installing asdf-tool-plugins..."
     # TODO: Replace with your install command
 
 # ===============================================================================
@@ -215,7 +215,7 @@ cookbook:
     #!/usr/bin/env bash
     mkdir -p docs
     OUTPUT="docs/just-cookbook.adoc"
-    echo "= {{project}} Justfile Cookbook" > "$OUTPUT"
+    echo "= asdf-tool-plugins Justfile Cookbook" > "$OUTPUT"
     echo ":toc: left" >> "$OUTPUT"
     echo ":toclevels: 3" >> "$OUTPUT"
     echo "" >> "$OUTPUT"
@@ -241,10 +241,10 @@ cookbook:
 man:
     #!/usr/bin/env bash
     mkdir -p docs/man
-    cat > docs/man/{{project}}.1 << EOF
-    .TH {{project}} 1 "$(date +%Y-%m-%d)" "{{version}}" "{{project}} Manual"
+    cat > docs/man/asdf-tool-plugins.1 << EOF
+    .TH asdf-tool-plugins 1 "$(date +%Y-%m-%d)" "{{version}}" "asdf-tool-plugins Manual"
     .SH NAME
-    {{project}} \- RSR-compliant project
+    asdf-tool-plugins \- RSR-compliant project
     .SH SYNOPSIS
     .B just
     [recipe] [args...]
@@ -253,7 +253,7 @@ man:
     .SH AUTHOR
     $(git config user.name 2>/dev/null || echo "Author") <$(git config user.email 2>/dev/null || echo "email")>
     EOF
-    echo "Generated: docs/man/{{project}}.1"
+    echo "Generated: docs/man/asdf-tool-plugins.1"
 
 # ===============================================================================
 # CONTAINERS (Podman + Wolfi)
@@ -262,19 +262,19 @@ man:
 # Build container image
 container-build tag="latest":
     @if [ -f Containerfile ]; then \
-        podman build -t {{project}}:{{tag}} -f Containerfile .; \
+        podman build -t asdf-tool-plugins:{{tag}} -f Containerfile .; \
     else \
         echo "No Containerfile found"; \
     fi
 
 # Run container
 container-run *args:
-    podman run --rm -it {{project}}:latest {{args}}
+    podman run --rm -it asdf-tool-plugins:latest {{args}}
 
 # Push container image
 container-push registry="ghcr.io/hyperpolymath" tag="latest":
-    podman tag {{project}}:{{tag}} {{registry}}/{{project}}:{{tag}}
-    podman push {{registry}}/{{project}}:{{tag}}
+    podman tag asdf-tool-plugins:{{tag}} {{registry}}/asdf-tool-plugins:{{tag}}
+    podman push {{registry}}/asdf-tool-plugins:{{tag}}
 
 # ===============================================================================
 # CI & AUTOMATION

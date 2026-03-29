@@ -6,10 +6,10 @@
 ||| All functions are declared here with type signatures and safety proofs.
 ||| Implementations live in ffi/zig/
 
-module {{PROJECT}}.ABI.Foreign
+module AGE.ABI.Foreign
 
-import {{PROJECT}}.ABI.Types
-import {{PROJECT}}.ABI.Layout
+import AGE.ABI.Types
+import AGE.ABI.Layout
 
 %default total
 
@@ -20,7 +20,7 @@ import {{PROJECT}}.ABI.Layout
 ||| Initialize the library
 ||| Returns a handle to the library instance, or Nothing on failure
 export
-%foreign "C:{{project}}_init, lib{{project}}"
+%foreign "C:age_init, libage"
 prim__init : PrimIO Bits64
 
 ||| Safe wrapper for library initialization
@@ -32,7 +32,7 @@ init = do
 
 ||| Clean up library resources
 export
-%foreign "C:{{project}}_free, lib{{project}}"
+%foreign "C:age_free, libage"
 prim__free : Bits64 -> PrimIO ()
 
 ||| Safe wrapper for cleanup
@@ -46,7 +46,7 @@ free h = primIO (prim__free (handlePtr h))
 
 ||| Example operation: process data
 export
-%foreign "C:{{project}}_process, lib{{project}}"
+%foreign "C:age_process, libage"
 prim__process : Bits64 -> Bits32 -> PrimIO Bits32
 
 ||| Safe wrapper with error handling
@@ -69,12 +69,12 @@ prim__getString : Bits64 -> String
 
 ||| Free C string
 export
-%foreign "C:{{project}}_free_string, lib{{project}}"
+%foreign "C:age_free_string, libage"
 prim__freeString : Bits64 -> PrimIO ()
 
 ||| Get string result from library
 export
-%foreign "C:{{project}}_get_string, lib{{project}}"
+%foreign "C:age_get_string, libage"
 prim__getResult : Bits64 -> PrimIO Bits64
 
 ||| Safe string getter
@@ -95,7 +95,7 @@ getString h = do
 
 ||| Process array data
 export
-%foreign "C:{{project}}_process_array, lib{{project}}"
+%foreign "C:age_process_array, libage"
 prim__processArray : Bits64 -> Bits64 -> Bits32 -> PrimIO Bits32
 
 ||| Safe array processor
@@ -122,7 +122,7 @@ processArray h buf len = do
 
 ||| Get last error message
 export
-%foreign "C:{{project}}_last_error, lib{{project}}"
+%foreign "C:age_last_error, libage"
 prim__lastError : PrimIO Bits64
 
 ||| Retrieve last error as string
@@ -149,7 +149,7 @@ errorDescription NullPointer = "Null pointer"
 
 ||| Get library version
 export
-%foreign "C:{{project}}_version, lib{{project}}"
+%foreign "C:age_version, libage"
 prim__version : PrimIO Bits64
 
 ||| Get version as string
@@ -161,7 +161,7 @@ version = do
 
 ||| Get library build info
 export
-%foreign "C:{{project}}_build_info, lib{{project}}"
+%foreign "C:age_build_info, libage"
 prim__buildInfo : PrimIO Bits64
 
 ||| Get build information
@@ -182,7 +182,7 @@ Callback = Bits64 -> Bits32 -> Bits32
 
 ||| Register a callback
 export
-%foreign "C:{{project}}_register_callback, lib{{project}}"
+%foreign "C:age_register_callback, libage"
 prim__registerCallback : Bits64 -> AnyPtr -> PrimIO Bits32
 
 ||| Safe callback registration
@@ -206,7 +206,7 @@ registerCallback h cb = do
 
 ||| Check if library is initialized
 export
-%foreign "C:{{project}}_is_initialized, lib{{project}}"
+%foreign "C:age_is_initialized, libage"
 prim__isInitialized : Bits64 -> PrimIO Bits32
 
 ||| Check initialization status

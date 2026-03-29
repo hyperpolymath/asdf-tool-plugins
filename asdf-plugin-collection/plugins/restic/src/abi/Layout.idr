@@ -5,9 +5,9 @@
 |||
 ||| @see https://en.wikipedia.org/wiki/Data_structure_alignment
 
-module {{PROJECT}}.ABI.Layout
+module RESTIC.ABI.Layout
 
-import {{PROJECT}}.ABI.Types
+import RESTIC.ABI.Types
 import Data.Vect
 import Data.So
 

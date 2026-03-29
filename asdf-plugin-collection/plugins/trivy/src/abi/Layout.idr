@@ -5,9 +5,9 @@
 |||
 ||| @see https://en.wikipedia.org/wiki/Data_structure_alignment
 
-module {{PROJECT}}.ABI.Layout
+module TRIVY.ABI.Layout
 
-import {{PROJECT}}.ABI.Types
+import TRIVY.ABI.Types
 import Data.Vect
 import Data.So
 

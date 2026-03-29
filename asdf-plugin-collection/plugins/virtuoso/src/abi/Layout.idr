@@ -5,9 +5,9 @@
 |||
 ||| @see https://en.wikipedia.org/wiki/Data_structure_alignment
 
-module {{PROJECT}}.ABI.Layout
+module VIRTUOSO.ABI.Layout
 
-import {{PROJECT}}.ABI.Types
+import VIRTUOSO.ABI.Types
 import Data.Vect
 import Data.So
 

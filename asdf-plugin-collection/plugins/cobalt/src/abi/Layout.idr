@@ -5,9 +5,9 @@
 |||
 ||| @see https://en.wikipedia.org/wiki/Data_structure_alignment
 
-module {{PROJECT}}.ABI.Layout
+module COBALT.ABI.Layout
 
-import {{PROJECT}}.ABI.Types
+import COBALT.ABI.Types
 import Data.Vect
 import Data.So
 

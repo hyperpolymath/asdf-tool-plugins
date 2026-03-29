@@ -5,9 +5,9 @@
 |||
 ||| @see https://en.wikipedia.org/wiki/Data_structure_alignment
 
-module {{PROJECT}}.ABI.Layout
+module CASSANDRA.ABI.Layout
 
-import {{PROJECT}}.ABI.Types
+import CASSANDRA.ABI.Types
 import Data.Vect
 import Data.So
 

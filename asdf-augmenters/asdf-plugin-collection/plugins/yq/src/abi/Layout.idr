@@ -5,9 +5,9 @@
 |||
 ||| @see https://en.wikipedia.org/wiki/Data_structure_alignment
 
-module {{PROJECT}}.ABI.Layout
+module YQ.ABI.Layout
 
-import {{PROJECT}}.ABI.Types
+import YQ.ABI.Types
 import Data.Vect
 import Data.So
 

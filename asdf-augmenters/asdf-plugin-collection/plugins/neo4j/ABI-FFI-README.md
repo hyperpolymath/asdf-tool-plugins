@@ -1,6 +1,5 @@
-{{~ Aditionally delete this line and fill out the template below ~}}
 
-# {{PROJECT}} ABI/FFI Documentation
+# NEO4J ABI/FFI Documentation
 
 ## Overview
 
@@ -26,7 +25,7 @@ This library follows the **Hyperpolymath RSR Standard** for ABI and FFI design:
                   ▼
 ┌─────────────────────────────────────────────┐
 │  C Headers (auto-generated)                 │
-│  generated/abi/{{project}}.h                │
+│  generated/abi/neo4j.h                │
 └─────────────────┬───────────────────────────┘
                   │
                   │ imported by
@@ -39,7 +38,7 @@ This library follows the **Hyperpolymath RSR Standard** for ABI and FFI design:
 │  - Memory-safe by default                   │
 └─────────────────┬───────────────────────────┘
                   │
-                  │ compiled to lib{{project}}.so/.a
+                  │ compiled to libneo4j.so/.a
                   ▼
 ┌─────────────────────────────────────────────┐
 │  Any Language via C ABI                     │
@@ -50,7 +49,7 @@ This library follows the **Hyperpolymath RSR Standard** for ABI and FFI design:
 ## Directory Structure
 
 ```
-{{project}}/
+neo4j/
 ├── src/
 │   ├── abi/                    # ABI definitions (Idris2)
 │   │   ├── Types.idr           # Core type definitions with proofs
@@ -67,11 +66,11 @@ This library follows the **Hyperpolymath RSR Standard** for ABI and FFI design:
 │       ├── test/
 │       │   └── integration_test.zig
 │       └── include/
-│           └── {{project}}.h   # C header (optional, can be generated)
+│           └── neo4j.h   # C header (optional, can be generated)
 │
 ├── generated/                  # Auto-generated files
 │   └── abi/
-│       └── {{project}}.h       # Generated from Idris2 ABI
+│       └── neo4j.h       # Generated from Idris2 ABI
 │
 └── bindings/                   # Language-specific wrappers (optional)
     ├── rust/
@@ -199,7 +198,7 @@ zig build test                    # Run tests
 
 ```bash
 cd src/abi
-idris2 --cg c-header Types.idr -o ../../generated/abi/{{project}}.h
+idris2 --cg c-header Types.idr -o ../../generated/abi/neo4j.h
 ```
 
 ### Cross-Compile
@@ -222,32 +221,32 @@ zig build -Dtarget=x86_64-windows
 ### From C
 
 ```c
-#include "{{project}}.h"
+#include "neo4j.h"
 
 int main() {
-    void* handle = {{project}}_init();
+    void* handle = neo4j_init();
     if (!handle) return 1;
 
-    int result = {{project}}_process(handle, 42);
+    int result = neo4j_process(handle, 42);
     if (result != 0) {
-        const char* err = {{project}}_last_error();
+        const char* err = neo4j_last_error();
         fprintf(stderr, "Error: %s\n", err);
     }
 
-    {{project}}_free(handle);
+    neo4j_free(handle);
     return 0;
 }
 ```
 
 Compile with:
 ```bash
-gcc -o example example.c -l{{project}} -L./zig-out/lib
+gcc -o example example.c -lneo4j -L./zig-out/lib
 ```
 
 ### From Idris2
 
 ```idris
-import {{PROJECT}}.ABI.Foreign
+import NEO4J.ABI.Foreign
 
 main : IO ()
 main = do
@@ -264,22 +263,22 @@ main = do
 ### From Rust
 
 ```rust
-#[link(name = "{{project}}")]
+#[link(name = "neo4j")]
 extern "C" {
-    fn {{project}}_init() -> *mut std::ffi::c_void;
-    fn {{project}}_free(handle: *mut std::ffi::c_void);
-    fn {{project}}_process(handle: *mut std::ffi::c_void, input: u32) -> i32;
+    fn neo4j_init() -> *mut std::ffi::c_void;
+    fn neo4j_free(handle: *mut std::ffi::c_void);
+    fn neo4j_process(handle: *mut std::ffi::c_void, input: u32) -> i32;
 }
 
 fn main() {
     unsafe {
-        let handle = {{project}}_init();
+        let handle = neo4j_init();
         assert!(!handle.is_null());
 
-        let result = {{project}}_process(handle, 42);
+        let result = neo4j_process(handle, 42);
         assert_eq!(result, 0);
 
-        {{project}}_free(handle);
+        neo4j_free(handle);
     }
 }
 ```
@@ -287,21 +286,21 @@ fn main() {
 ### From Julia
 
 ```julia
-const lib{{project}} = "lib{{project}}"
+const libneo4j = "libneo4j"
 
 function init()
-    handle = ccall((:{{project}}_init, lib{{project}}), Ptr{Cvoid}, ())
+    handle = ccall((:neo4j_init, libneo4j), Ptr{Cvoid}, ())
     handle == C_NULL && error("Failed to initialize")
     handle
 end
 
 function process(handle, input)
-    result = ccall((:{{project}}_process, lib{{project}}), Cint, (Ptr{Cvoid}, UInt32), handle, input)
+    result = ccall((:neo4j_process, libneo4j), Cint, (Ptr{Cvoid}, UInt32), handle, input)
     result
 end
 
 function cleanup(handle)
-    ccall((:{{project}}_free, lib{{project}}), Cvoid, (Ptr{Cvoid},), handle)
+    ccall((:neo4j_free, libneo4j), Cvoid, (Ptr{Cvoid},), handle)
 end
 
 # Usage
@@ -355,7 +354,7 @@ When modifying the ABI/FFI:
 
 2. **Generate C header**
    ```bash
-   idris2 --cg c-header src/abi/Types.idr -o generated/abi/{{project}}.h
+   idris2 --cg c-header src/abi/Types.idr -o generated/abi/neo4j.h
    ```
 
 3. **Update FFI implementation** (`ffi/zig/src/main.zig`)

@@ -1,6 +1,5 @@
-{{~ Aditionally delete this line and fill out the template below ~}}
 
-# {{PROJECT}} ABI/FFI Documentation
+# REKOR ABI/FFI Documentation
 
 ## Overview
 
@@ -26,7 +25,7 @@ This library follows the **Hyperpolymath RSR Standard** for ABI and FFI design:
                   ▼
 ┌─────────────────────────────────────────────┐
 │  C Headers (auto-generated)                 │
-│  generated/abi/{{project}}.h                │
+│  generated/abi/rekor.h                │
 └─────────────────┬───────────────────────────┘
                   │
                   │ imported by
@@ -39,7 +38,7 @@ This library follows the **Hyperpolymath RSR Standard** for ABI and FFI design:
 │  - Memory-safe by default                   │
 └─────────────────┬───────────────────────────┘
                   │
-                  │ compiled to lib{{project}}.so/.a
+                  │ compiled to librekor.so/.a
                   ▼
 ┌─────────────────────────────────────────────┐
 │  Any Language via C ABI                     │
@@ -50,7 +49,7 @@ This library follows the **Hyperpolymath RSR Standard** for ABI and FFI design:
 ## Directory Structure
 
 ```
-{{project}}/
+rekor/
 ├── src/
 │   ├── abi/                    # ABI definitions (Idris2)
 │   │   ├── Types.idr           # Core type definitions with proofs
@@ -67,11 +66,11 @@ This library follows the **Hyperpolymath RSR Standard** for ABI and FFI design:
 │       ├── test/
 │       │   └── integration_test.zig
 │       └── include/
-│           └── {{project}}.h   # C header (optional, can be generated)
+│           └── rekor.h   # C header (optional, can be generated)
 │
 ├── generated/                  # Auto-generated files
 │   └── abi/
-│       └── {{project}}.h       # Generated from Idris2 ABI
+│       └── rekor.h       # Generated from Idris2 ABI
 │
 └── bindings/                   # Language-specific wrappers (optional)
     ├── rust/
@@ -199,7 +198,7 @@ zig build test                    # Run tests
 
 ```bash
 cd src/abi
-idris2 --cg c-header Types.idr -o ../../generated/abi/{{project}}.h
+idris2 --cg c-header Types.idr -o ../../generated/abi/rekor.h
 ```
 
 ### Cross-Compile
@@ -222,32 +221,32 @@ zig build -Dtarget=x86_64-windows
 ### From C
 
 ```c
-#include "{{project}}.h"
+#include "rekor.h"
 
 int main() {
-    void* handle = {{project}}_init();
+    void* handle = rekor_init();
     if (!handle) return 1;
 
-    int result = {{project}}_process(handle, 42);
+    int result = rekor_process(handle, 42);
     if (result != 0) {
-        const char* err = {{project}}_last_error();
+        const char* err = rekor_last_error();
         fprintf(stderr, "Error: %s\n", err);
     }
 
-    {{project}}_free(handle);
+    rekor_free(handle);
     return 0;
 }
 ```
 
 Compile with:
 ```bash
-gcc -o example example.c -l{{project}} -L./zig-out/lib
+gcc -o example example.c -lrekor -L./zig-out/lib
 ```
 
 ### From Idris2
 
 ```idris
-import {{PROJECT}}.ABI.Foreign
+import REKOR.ABI.Foreign
 
 main : IO ()
 main = do
@@ -264,22 +263,22 @@ main = do
 ### From Rust
 
 ```rust
-#[link(name = "{{project}}")]
+#[link(name = "rekor")]
 extern "C" {
-    fn {{project}}_init() -> *mut std::ffi::c_void;
-    fn {{project}}_free(handle: *mut std::ffi::c_void);
-    fn {{project}}_process(handle: *mut std::ffi::c_void, input: u32) -> i32;
+    fn rekor_init() -> *mut std::ffi::c_void;
+    fn rekor_free(handle: *mut std::ffi::c_void);
+    fn rekor_process(handle: *mut std::ffi::c_void, input: u32) -> i32;
 }
 
 fn main() {
     unsafe {
-        let handle = {{project}}_init();
+        let handle = rekor_init();
         assert!(!handle.is_null());
 
-        let result = {{project}}_process(handle, 42);
+        let result = rekor_process(handle, 42);
         assert_eq!(result, 0);
 
-        {{project}}_free(handle);
+        rekor_free(handle);
     }
 }
 ```
@@ -287,21 +286,21 @@ fn main() {
 ### From Julia
 
 ```julia
-const lib{{project}} = "lib{{project}}"
+const librekor = "librekor"
 
 function init()
-    handle = ccall((:{{project}}_init, lib{{project}}), Ptr{Cvoid}, ())
+    handle = ccall((:rekor_init, librekor), Ptr{Cvoid}, ())
     handle == C_NULL && error("Failed to initialize")
     handle
 end
 
 function process(handle, input)
-    result = ccall((:{{project}}_process, lib{{project}}), Cint, (Ptr{Cvoid}, UInt32), handle, input)
+    result = ccall((:rekor_process, librekor), Cint, (Ptr{Cvoid}, UInt32), handle, input)
     result
 end
 
 function cleanup(handle)
-    ccall((:{{project}}_free, lib{{project}}), Cvoid, (Ptr{Cvoid},), handle)
+    ccall((:rekor_free, librekor), Cvoid, (Ptr{Cvoid},), handle)
 end
 
 # Usage
@@ -355,7 +354,7 @@ When modifying the ABI/FFI:
 
 2. **Generate C header**
    ```bash
-   idris2 --cg c-header src/abi/Types.idr -o generated/abi/{{project}}.h
+   idris2 --cg c-header src/abi/Types.idr -o generated/abi/rekor.h
    ```
 
 3. **Update FFI implementation** (`ffi/zig/src/main.zig`)
