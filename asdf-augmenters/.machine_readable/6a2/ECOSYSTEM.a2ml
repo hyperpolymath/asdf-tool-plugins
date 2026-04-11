@@ -1,3 +1,20 @@
-;; SPDX-License-Identifier: PMPL-1.0-or-later
-(ecosystem (metadata (version "0.1.0") (last-updated "2026-02-08"))
-  (project (name "asdf-augmenters") (purpose "Meta-tools that enhance the asdf version manager") (role developer-tools)))
+# SPDX-License-Identifier: PMPL-1.0-or-later
+# Copyright (c) 2026 Jonathan D.A. Jewell (hyperpolymath) <j.d.a.jewell@open.ac.uk>
+#
+# ECOSYSTEM.a2ml — Asdf Augmenters ecosystem position
+[metadata]
+version = "0.1.0"
+last-updated = "2026-02-08"
+
+[project]
+name = "Asdf Augmenters"
+purpose = "Meta-tools that enhance the asdf version manager"
+role = ""
+
+[position-in-ecosystem]
+category = ""
+
+[related-projects]
+projects = [
+  # No related projects recorded
+]
