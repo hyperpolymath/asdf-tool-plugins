@@ -58,7 +58,6 @@ zig-out/
 deno.lock
 
 # Rust
-Cargo.lock
 
 # ReScript
 lib/bs/
