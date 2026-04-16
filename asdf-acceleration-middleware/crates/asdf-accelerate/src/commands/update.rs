@@ -59,7 +59,7 @@ pub fn execute(
     pb.set_style(
         ProgressStyle::default_bar()
             .template("{spinner:.green} [{bar:40.cyan/blue}] {pos}/{len} {msg}")
-            .unwrap()
+            .expect("TODO: handle error")
             .progress_chars("#>-"),
     );
 

@@ -93,21 +93,21 @@ mod tests {
 
     #[test]
     fn test_disk_cache_basic() {
-        let dir = TempDir::new().unwrap();
-        let cache = DiskCache::open(dir.path()).unwrap();
+        let dir = TempDir::new().expect("TODO: handle error");
+        let cache = DiskCache::open(dir.path()).expect("TODO: handle error");
 
         cache
             .insert("key1", "value1".to_string(), Duration::from_secs(3600))
-            .unwrap();
+            .expect("TODO: handle error");
 
-        let value: String = cache.get("key1").unwrap();
+        let value: String = cache.get("key1").expect("TODO: handle error");
         assert_eq!(value, "value1");
     }
 
     #[test]
     fn test_disk_cache_miss() {
-        let dir = TempDir::new().unwrap();
-        let cache = DiskCache::open(dir.path()).unwrap();
+        let dir = TempDir::new().expect("TODO: handle error");
+        let cache = DiskCache::open(dir.path()).expect("TODO: handle error");
 
         let result: Result<String> = cache.get("nonexistent");
         assert!(result.is_err());
@@ -115,12 +115,12 @@ mod tests {
 
     #[test]
     fn test_disk_cache_expiry() {
-        let dir = TempDir::new().unwrap();
-        let cache = DiskCache::open(dir.path()).unwrap();
+        let dir = TempDir::new().expect("TODO: handle error");
+        let cache = DiskCache::open(dir.path()).expect("TODO: handle error");
 
         cache
             .insert("key1", "value1".to_string(), Duration::from_secs(0))
-            .unwrap();
+            .expect("TODO: handle error");
 
         std::thread::sleep(Duration::from_millis(10));
 
@@ -130,20 +130,20 @@ mod tests {
 
     #[test]
     fn test_disk_cache_persistence() {
-        let dir = TempDir::new().unwrap();
+        let dir = TempDir::new().expect("TODO: handle error");
 
         {
-            let cache = DiskCache::open(dir.path()).unwrap();
+            let cache = DiskCache::open(dir.path()).expect("TODO: handle error");
             cache
                 .insert("key1", "value1".to_string(), Duration::from_secs(3600))
-                .unwrap();
-            cache.flush().unwrap();
+                .expect("TODO: handle error");
+            cache.flush().expect("TODO: handle error");
         }
 
         // Reopen and verify data persisted
         {
-            let cache = DiskCache::open(dir.path()).unwrap();
-            let value: String = cache.get("key1").unwrap();
+            let cache = DiskCache::open(dir.path()).expect("TODO: handle error");
+            let value: String = cache.get("key1").expect("TODO: handle error");
             assert_eq!(value, "value1");
         }
     }

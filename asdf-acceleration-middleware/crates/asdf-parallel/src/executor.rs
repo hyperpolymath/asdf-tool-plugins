@@ -196,7 +196,7 @@ mod tests {
 
         let results = executor
             .execute(tasks, |x| Ok(x * 2))
-            .unwrap();
+            .expect("TODO: handle error");
 
         assert_eq!(results, vec![2, 4, 6, 8, 10]);
     }
@@ -213,7 +213,7 @@ mod tests {
 
         let results = executor
             .execute(tasks, |x| Ok(x * 2))
-            .unwrap();
+            .expect("TODO: handle error");
 
         assert_eq!(results.len(), 5);
     }
@@ -239,7 +239,7 @@ mod tests {
 
         // Should return successes only
         assert!(results.is_ok());
-        let results = results.unwrap();
+        let results = results.expect("TODO: handle error");
         assert_eq!(results, vec![2, 6, 10]);
     }
 

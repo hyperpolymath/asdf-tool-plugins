@@ -172,8 +172,8 @@ mod tests {
         let plugin = Plugin::new("nodejs")
             .with_url("https://github.com/asdf-vm/asdf-nodejs.git");
 
-        let json = serde_json::to_string(&plugin).unwrap();
-        let deserialized: Plugin = serde_json::from_str(&json).unwrap();
+        let json = serde_json::to_string(&plugin).expect("TODO: handle error");
+        let deserialized: Plugin = serde_json::from_str(&json).expect("TODO: handle error");
 
         assert_eq!(plugin, deserialized);
     }

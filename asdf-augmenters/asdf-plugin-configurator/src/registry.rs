@@ -385,7 +385,7 @@ mod tests {
 
     #[test]
     fn test_version_satisfies() {
-        let v = Version::parse("1.5.0").unwrap();
+        let v = Version::parse("1.5.0").expect("TODO: handle error");
         assert!(v.satisfies(">=1.0.0"));
         assert!(v.satisfies("^1.0.0"));
         assert!(v.satisfies("~1.5.0"));
@@ -396,10 +396,10 @@ mod tests {
     #[test]
     fn test_resolve_version() {
         let versions = vec![
-            Version::parse("1.0.0").unwrap(),
-            Version::parse("1.5.0").unwrap(),
-            Version::parse("2.0.0").unwrap(),
-            Version::parse("2.1.0-beta").unwrap(),
+            Version::parse("1.0.0").expect("TODO: handle error"),
+            Version::parse("1.5.0").expect("TODO: handle error"),
+            Version::parse("2.0.0").expect("TODO: handle error"),
+            Version::parse("2.1.0-beta").expect("TODO: handle error"),
         ];
 
         assert_eq!(resolve_version("latest", &versions), Some("2.0.0".to_string()));

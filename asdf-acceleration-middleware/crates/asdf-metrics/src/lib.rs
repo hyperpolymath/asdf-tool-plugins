@@ -35,7 +35,7 @@ mod tests {
             average_duration: Duration::from_secs(10),
         };
 
-        let output = export_prometheus(&metrics).unwrap();
+        let output = export_prometheus(&metrics).expect("TODO: handle error");
         assert!(output.contains("10"));
     }
 }

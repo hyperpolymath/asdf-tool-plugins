@@ -179,8 +179,8 @@ mod tests {
     #[test]
     fn test_config_serialization() {
         let config = AcceleratorConfig::default();
-        let json = serde_json::to_string(&config).unwrap();
-        let deserialized: AcceleratorConfig = serde_json::from_str(&json).unwrap();
+        let json = serde_json::to_string(&config).expect("TODO: handle error");
+        let deserialized: AcceleratorConfig = serde_json::from_str(&json).expect("TODO: handle error");
         assert_eq!(config.cache.ttl_secs, deserialized.cache.ttl_secs);
     }
 

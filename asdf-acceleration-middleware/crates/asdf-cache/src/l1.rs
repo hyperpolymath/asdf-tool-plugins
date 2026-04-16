@@ -22,7 +22,7 @@ where
 {
     /// Create a new memory cache with given capacity
     pub fn new(capacity: usize) -> Self {
-        let cap = NonZeroUsize::new(capacity).unwrap_or(NonZeroUsize::new(1000).unwrap());
+        let cap = NonZeroUsize::new(capacity).unwrap_or(NonZeroUsize::new(1000).expect("TODO: handle error"));
         Self {
             cache: Arc::new(Mutex::new(LruCache::new(cap))),
         }
@@ -30,7 +30,7 @@ where
 
     /// Get a value from the cache
     pub fn get(&self, key: &K) -> Result<V> {
-        let mut cache = self.cache.lock().unwrap();
+        let mut cache = self.cache.lock().expect("TODO: handle error");
 
         if let Some(entry) = cache.get(key) {
             if entry.is_expired() {
@@ -47,25 +47,25 @@ where
     /// Insert a value into the cache
     pub fn insert(&self, key: K, value: V, ttl: Duration) {
         let entry = CacheEntry::new(value, ttl);
-        let mut cache = self.cache.lock().unwrap();
+        let mut cache = self.cache.lock().expect("TODO: handle error");
         cache.put(key, entry);
     }
 
     /// Remove a value from the cache
     pub fn remove(&self, key: &K) -> Option<V> {
-        let mut cache = self.cache.lock().unwrap();
+        let mut cache = self.cache.lock().expect("TODO: handle error");
         cache.pop(key).map(|entry| entry.value)
     }
 
     /// Clear all entries
     pub fn clear(&self) {
-        let mut cache = self.cache.lock().unwrap();
+        let mut cache = self.cache.lock().expect("TODO: handle error");
         cache.clear();
     }
 
     /// Get the number of entries
     pub fn len(&self) -> usize {
-        let cache = self.cache.lock().unwrap();
+        let cache = self.cache.lock().expect("TODO: handle error");
         cache.len()
     }
 
@@ -101,7 +101,7 @@ mod tests {
             Duration::from_secs(3600),
         );
 
-        let value = cache.get(&"key1".to_string()).unwrap();
+        let value = cache.get(&"key1".to_string()).expect("TODO: handle error");
         assert_eq!(value, "value1");
     }
 

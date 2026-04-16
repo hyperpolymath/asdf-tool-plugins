@@ -50,7 +50,7 @@ pub fn execute(
     pb.set_style(
         ProgressStyle::default_bar()
             .template("{spinner:.green} [{bar:40.cyan/blue}] {pos}/{len} {msg}")
-            .unwrap()
+            .expect("TODO: handle error")
             .progress_chars("#>-"),
     );
 
@@ -105,7 +105,7 @@ mod tests {
 
     #[test]
     fn test_parse_runtime_spec() {
-        let runtime = parse_runtime_spec("nodejs@20.0.0").unwrap();
+        let runtime = parse_runtime_spec("nodejs@20.0.0").expect("TODO: handle error");
         assert_eq!(runtime.plugin, "nodejs");
         assert_eq!(runtime.version.to_string(), "20.0.0");
     }

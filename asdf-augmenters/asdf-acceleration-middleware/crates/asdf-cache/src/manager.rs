@@ -95,9 +95,9 @@ mod tests {
 
     #[test]
     fn test_cache_manager_basic() {
-        let dir = TempDir::new().unwrap();
+        let dir = TempDir::new().expect("TODO: handle error");
         let manager: CacheManager<String> =
-            CacheManager::new(dir.path(), 100).unwrap();
+            CacheManager::new(dir.path(), 100).expect("TODO: handle error");
 
         manager
             .insert(
@@ -105,29 +105,29 @@ mod tests {
                 "value1".to_string(),
                 Duration::from_secs(3600),
             )
-            .unwrap();
+            .expect("TODO: handle error");
 
-        let value: String = manager.get(&"key1".to_string()).unwrap();
+        let value: String = manager.get(&"key1".to_string()).expect("TODO: handle error");
         assert_eq!(value, "value1");
     }
 
     #[test]
     fn test_cache_manager_l1_promotion() {
-        let dir = TempDir::new().unwrap();
+        let dir = TempDir::new().expect("TODO: handle error");
         let manager: CacheManager<String> =
-            CacheManager::new(dir.path(), 100).unwrap();
+            CacheManager::new(dir.path(), 100).expect("TODO: handle error");
 
         // Insert into L2 only
         manager.l2
             .insert("key1", "value1".to_string(), Duration::from_secs(3600))
-            .unwrap();
+            .expect("TODO: handle error");
 
         // First get should promote to L1
-        let value: String = manager.get(&"key1".to_string()).unwrap();
+        let value: String = manager.get(&"key1".to_string()).expect("TODO: handle error");
         assert_eq!(value, "value1");
 
         // Second get should hit L1
-        let value: String = manager.get(&"key1".to_string()).unwrap();
+        let value: String = manager.get(&"key1".to_string()).expect("TODO: handle error");
         assert_eq!(value, "value1");
     }
 }
