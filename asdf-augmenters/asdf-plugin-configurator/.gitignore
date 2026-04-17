@@ -17,3 +17,13 @@ Thumbs.db
 # Environment files
 .env
 .env.local
+target/
+node_modules/
+_build/
+deps/
+.elixir_ls/
+.cache/
+*.log
+*.tmp
+build/
+dist/

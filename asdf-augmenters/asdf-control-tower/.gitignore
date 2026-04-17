@@ -63,3 +63,6 @@ deno.lock
 lib/bs/
 .bsb.lock
 *.bs.js
+.elixir_ls/
+.cache/
+Thumbs.db
