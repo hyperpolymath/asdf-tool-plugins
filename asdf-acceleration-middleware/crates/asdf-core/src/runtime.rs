@@ -132,16 +132,16 @@ mod tests {
 
     #[test]
     fn test_runtime_new() {
-        let runtime = Runtime::new("nodejs", Version::parse("20.0.0").expect("TODO: handle error"));
+        let runtime = Runtime::new("nodejs", Version::parse("20.0.0").unwrap());
         assert_eq!(runtime.plugin, "nodejs");
         assert!(!runtime.active);
     }
 
     #[test]
     fn test_runtime_serialization() {
-        let runtime = Runtime::new("nodejs", Version::parse("20.0.0").expect("TODO: handle error"));
-        let json = serde_json::to_string(&runtime).expect("TODO: handle error");
-        let deserialized: Runtime = serde_json::from_str(&json).expect("TODO: handle error");
+        let runtime = Runtime::new("nodejs", Version::parse("20.0.0").unwrap());
+        let json = serde_json::to_string(&runtime).unwrap();
+        let deserialized: Runtime = serde_json::from_str(&json).unwrap();
         assert_eq!(runtime, deserialized);
     }
 }

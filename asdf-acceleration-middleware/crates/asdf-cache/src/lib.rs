@@ -86,6 +86,6 @@ mod tests {
         let entry = CacheEntry::new("value", Duration::from_secs(3600));
         let remaining = entry.remaining_ttl();
         assert!(remaining.is_some());
-        assert!(remaining.expect("TODO: handle error").as_secs() <= 3600);
+        assert!(remaining.unwrap().as_secs() <= 3600);
     }
 }

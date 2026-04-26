@@ -98,7 +98,7 @@ mod tests {
             used_swap_kb: 500_000,
         };
 
-        let json = MetricsReporter::to_json(&metrics, &system_info).expect("TODO: handle error");
+        let json = MetricsReporter::to_json(&metrics, &system_info).unwrap();
         assert!(json.contains("metrics"));
         assert!(json.contains("system"));
     }

@@ -141,7 +141,7 @@ mod tests {
 
     #[test]
     fn test_version_parse() {
-        let v = Version::parse("1.2.3").expect("TODO: handle error");
+        let v = Version::parse("1.2.3").unwrap();
         assert_eq!(v.major, 1);
         assert_eq!(v.minor, 2);
         assert_eq!(v.patch, 3);
@@ -151,7 +151,7 @@ mod tests {
 
     #[test]
     fn test_version_parse_pre() {
-        let v = Version::parse("1.2.3-beta.1").expect("TODO: handle error");
+        let v = Version::parse("1.2.3-beta.1").unwrap();
         assert_eq!(v.major, 1);
         assert_eq!(v.minor, 2);
         assert_eq!(v.patch, 3);
@@ -160,25 +160,25 @@ mod tests {
 
     #[test]
     fn test_version_parse_build() {
-        let v = Version::parse("1.2.3+build.123").expect("TODO: handle error");
+        let v = Version::parse("1.2.3+build.123").unwrap();
         assert_eq!(v.major, 1);
         assert_eq!(v.build, Some("build.123".to_string()));
     }
 
     #[test]
     fn test_version_compare() {
-        let v1 = Version::parse("1.2.3").expect("TODO: handle error");
-        let v2 = Version::parse("1.2.4").expect("TODO: handle error");
+        let v1 = Version::parse("1.2.3").unwrap();
+        let v2 = Version::parse("1.2.4").unwrap();
         assert!(v1 < v2);
 
-        let v3 = Version::parse("2.0.0").expect("TODO: handle error");
+        let v3 = Version::parse("2.0.0").unwrap();
         assert!(v2 < v3);
     }
 
     #[test]
     fn test_version_prerelease() {
-        let v1 = Version::parse("1.2.3").expect("TODO: handle error");
-        let v2 = Version::parse("1.2.3-beta").expect("TODO: handle error");
+        let v1 = Version::parse("1.2.3").unwrap();
+        let v2 = Version::parse("1.2.3-beta").unwrap();
         assert!(v2 < v1); // Pre-release has lower precedence
         assert!(v2.is_prerelease());
         assert!(!v1.is_prerelease());
@@ -186,13 +186,13 @@ mod tests {
 
     #[test]
     fn test_version_display() {
-        let v = Version::parse("1.2.3-beta.1+build.123").expect("TODO: handle error");
+        let v = Version::parse("1.2.3-beta.1+build.123").unwrap();
         assert_eq!(v.to_string(), "1.2.3-beta.1+build.123");
     }
 
     #[test]
     fn test_base_version() {
-        let v = Version::parse("1.2.3-beta.1+build.123").expect("TODO: handle error");
+        let v = Version::parse("1.2.3-beta.1+build.123").unwrap();
         assert_eq!(v.base_version(), "1.2.3");
     }
 }
