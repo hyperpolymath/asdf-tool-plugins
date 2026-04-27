@@ -13,7 +13,7 @@ impl ConfigLoader {
     /// Create a new configuration loader
     pub fn new() -> Self {
         Self {
-            builder: Config::builder().build().expect("TODO: handle error"),
+            builder: Config::builder().build().expect("empty config builder cannot fail"),
         }
     }
 
@@ -61,7 +61,7 @@ impl ConfigLoader {
         // Start with defaults
         let defaults = AcceleratorConfig::default();
         builder = builder.add_source(config::File::from_str(
-            &serde_json::to_string(&defaults).expect("TODO: handle error"),
+            &serde_json::to_string(&defaults).expect("AcceleratorConfig::default() is always serializable"),
             config::FileFormat::Json,
         ));
 
@@ -110,7 +110,7 @@ mod tests {
 
     #[test]
     fn test_load_from_file() {
-        let mut file = NamedTempFile::new().expect("TODO: handle error");
+        let mut file = NamedTempFile::new().unwrap();
         writeln!(
             file,
             r#"
@@ -125,10 +125,10 @@ fail_fast = true
 enabled = false
             "#
         )
-        .expect("TODO: handle error");
+        .unwrap();
 
         let mut loader = ConfigLoader::new();
-        let config = loader.load_file(file.path()).expect("TODO: handle error");
+        let config = loader.load_file(file.path()).unwrap();
 
         assert!(config.cache.enabled);
         assert_eq!(config.cache.ttl_secs, 7200);

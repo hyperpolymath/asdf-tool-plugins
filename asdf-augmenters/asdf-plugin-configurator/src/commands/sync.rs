@@ -199,7 +199,7 @@ fn sync_pull_via_git(config_path: &Path, local_config: &Config, remote: &RemoteC
     if let Some(ref branch) = remote.branch {
         git_args.extend(["--branch", branch]);
     }
-    git_args.extend([&remote.url, temp_path.to_str().expect("TODO: handle error")]);
+    git_args.extend([&remote.url, temp_path.to_str().expect("SPARK-candidate: utf8_temp_path — tempdir paths are always UTF-8 on supported platforms")]);
 
     let clone_result = Command::new("git")
         .args(&git_args)
@@ -254,7 +254,7 @@ fn sync_push(config_path: &Path, config: &Config, remote: &RemoteConfig, verbose
 fn push_via_git_commit(config_path: &Path, _config: &Config, _remote: &RemoteConfig, verbose: bool) -> Result<()> {
     // Stage the config file
     let add_result = Command::new("git")
-        .args(["add", config_path.to_str().expect("TODO: handle error")])
+        .args(["add", config_path.to_str().expect("SPARK-candidate: utf8_config_path — asdf config paths are always valid UTF-8")])
         .output()
         .context("Failed to stage config file")?;
 
@@ -265,7 +265,7 @@ fn push_via_git_commit(config_path: &Path, _config: &Config, _remote: &RemoteCon
 
     // Check if there are changes to commit
     let status_output = Command::new("git")
-        .args(["status", "--porcelain", config_path.to_str().expect("TODO: handle error")])
+        .args(["status", "--porcelain", config_path.to_str().expect("SPARK-candidate: utf8_config_path — asdf config paths are always valid UTF-8")])
         .output()?;
 
     let status = String::from_utf8_lossy(&status_output.stdout);
@@ -315,7 +315,7 @@ fn push_via_git_clone(_config_path: &Path, config: &Config, remote: &RemoteConfi
     if let Some(ref branch) = remote.branch {
         git_args.extend(["--branch", branch]);
     }
-    git_args.extend([&remote.url, temp_path.to_str().expect("TODO: handle error")]);
+    git_args.extend([&remote.url, temp_path.to_str().expect("SPARK-candidate: utf8_temp_path — tempdir paths are always UTF-8 on supported platforms")]);
 
     let clone_result = Command::new("git")
         .args(&git_args)
