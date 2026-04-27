@@ -13,7 +13,7 @@ impl ConfigLoader {
     /// Create a new configuration loader
     pub fn new() -> Self {
         Self {
-            builder: Config::builder().build().unwrap(),
+            builder: Config::builder().build().expect("empty config builder with no sources cannot fail"),
         }
     }
 
@@ -61,7 +61,7 @@ impl ConfigLoader {
         // Start with defaults
         let defaults = AcceleratorConfig::default();
         builder = builder.add_source(config::File::from_str(
-            &serde_json::to_string(&defaults).unwrap(),
+            &serde_json::to_string(&defaults).expect("AcceleratorConfig::default() is fully serializable: all fields implement Serialize"),
             config::FileFormat::Json,
         ));
 
