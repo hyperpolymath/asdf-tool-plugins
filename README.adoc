@@ -1,5 +1,5 @@
 = asdf Tool Plugins
-// SPDX-License-Identifier: PMPL-1.0-or-later
+// SPDX-License-Identifier: MPL-2.0
 
 Hyperpolymath's collection of asdf plugins for installing and managing development tools and runtimes.
 
@@ -7,7 +7,7 @@ Each subdirectory is a standalone asdf plugin that can be installed via `asdf pl
 
 == License
 
-PMPL-1.0-or-later
+MPL-2.0
 
 == Author
 

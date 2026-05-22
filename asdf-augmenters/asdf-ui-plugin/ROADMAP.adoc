@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: PMPL-1.0-or-later
+// SPDX-License-Identifier: MPL-2.0
 = asdf-ui-plugin Roadmap
 :toc: macro
 :toc-title: Phases
@@ -63,7 +63,7 @@ Terminal user interface plugin for asdf version manager.
 
 | SPDX licensing
 | icon:check[role=green] Done
-| PMPL-1.0-or-later headers
+| MPL-2.0 headers
 |===
 
 == Contributing

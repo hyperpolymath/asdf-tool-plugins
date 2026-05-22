@@ -1,5 +1,5 @@
 = asdf-plugin-collection
-// SPDX-License-Identifier: PMPL-1.0-or-later
+// SPDX-License-Identifier: MPL-2.0
 :author: Jonathan D.A. Jewell <j.d.a.jewell@open.ac.uk>
 
 Monorepo of asdf version manager plugins.
@@ -108,4 +108,4 @@ The following asdf-related repos are kept separate (meta-tools and indexes):
 
 == License
 
-PMPL-1.0-or-later
+MPL-2.0

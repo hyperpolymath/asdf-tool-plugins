@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: PMPL-1.0-or-later
+// SPDX-License-Identifier: MPL-2.0
 = asdf-tool-plugins Roadmap
 
 asdf plugins for installing development tools and runtimes. Completion: 70%.

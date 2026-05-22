@@ -1,11 +1,11 @@
-# SPDX-License-Identifier: PMPL-1.0-or-later
+# SPDX-License-Identifier: MPL-2.0
 [package]
 name = "asdf-config"
 version = "1.0.0"
 edition = "2021"
 authors = ["Hyperpolymath <hyperpolymath@users.noreply.github.com>"]
 description = "Declarative configuration management for asdf plugins"
-license = "PMPL-1.0-or-later"
+license = "MPL-2.0"
 repository = "https://github.com/hyperpolymath/asdf-plugin-configurator"
 keywords = ["asdf", "version-manager", "cli", "configuration"]
 categories = ["command-line-utilities", "development-tools"]

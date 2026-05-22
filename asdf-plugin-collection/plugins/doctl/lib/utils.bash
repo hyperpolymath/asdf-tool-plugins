@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SPDX-License-Identifier: PMPL-1.0-or-later
+# SPDX-License-Identifier: MPL-2.0
 set -euo pipefail
 readonly REPO="digitalocean/doctl"
 export TOOL_NAME="doctl" TOOL_CMD="doctl"
