@@ -1,0 +1,60 @@
+[![Sponsor](https://img.shields.io/badge/Sponsor-%E2%9D%A4-pink?logo=github)](https://github.com/sponsors/hyperpolymath)
+
+= asdf Tool Plugins
+// SPDX-License-Identifier: MPL-2.0
+:author: Jonathan D.A. Jewell <6759885+hyperpolymath@users.noreply.github.com>
+:revdate: 2026-05-26
+
+Hyperpolymath's collection of https://asdf-vm.com/[asdf] plugins for installing
+and managing development tools and runtimes across the estate.
+
+Each top-level subdirectory is a standalone asdf plugin. The full set covers
+the languages, runtimes, and tools the hyperpolymath language-policy
+(link:https://github.com/hyperpolymath/standards/blob/main/.claude/CLAUDE.md[CLAUDE.md
+in `hyperpolymath/standards`]) currently endorses, plus some neighbouring
+tools used in supporting infrastructure.
+
+== Installing a plugin
+
+Each plugin is installable directly from this monorepo using the standard
+asdf plugin-add URL form:
+
+[source,bash]
+----
+asdf plugin add <name> https://github.com/hyperpolymath/asdf-tool-plugins.git
+----
+
+(Some plugins may require additional setup — see the plugin's own README
+inside its subdirectory.)
+
+== Layout
+
+This is a *consolidated monorepo* — every plugin lives in a sibling
+directory at the top level. Each is autonomous (its own
+`bin/list-all`, `bin/install`, plugin-specific helpers).
+
+Browse the plugin list directly by running:
+
+[source,bash]
+----
+ls -d */
+----
+
+== Status
+
+* **Licence**: MPL-2.0.
+* **Estate role**: development-tooling support; downstream of the
+  `hyperpolymath/standards` language-policy.
+* **Audit findings**: see `docs/tech-debt-2026-05-26.md` if present
+  (added by the 2026-05-26 estate tech-debt scan).
+
+== Contributing
+
+PRs welcome — see link:CONTRIBUTING.md[CONTRIBUTING.md].
+All commits must be GPG-signed and follow conventional commits
+(per estate-wide policy in `hyperpolymath/standards`).
+
+== Companion repositories
+
+* link:https://github.com/hyperpolymath/standards[`hyperpolymath/standards`] — canonical estate-wide standards including the language policy.
+* link:https://github.com/hyperpolymath/rsr-template-repo[`hyperpolymath/rsr-template-repo`] — the canonical project scaffold (this repo follows the RSR pattern).
