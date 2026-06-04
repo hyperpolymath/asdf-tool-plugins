@@ -1,3 +1,7 @@
+<!--
+SPDX-License-Identifier: MPL-2.0
+Copyright (c) Jonathan D.A. Jewell <j.d.a.jewell@open.ac.uk>
+-->
 # Compatibility Matrix
 
 This document outlines the compatibility of asdf-ghjk across different platforms, asdf versions, and ghjk versions.

@@ -1,7 +1,9 @@
+// SPDX-License-Identifier: MPL-2.0
+// Copyright (c) Jonathan D.A. Jewell <j.d.a.jewell@open.ac.uk>
 = asdf-acceleration-middleware
 
 [![RSR Compliance](https://img.shields.io/badge/RSR-Silver-silver)](https://rhodium-standard.org)
-image:https://img.shields.io/badge/License-PMPL--1.0-blue.svg[License: PMPL-1.0,link="https://github.com/hyperpolymath/palimpsest-license"]
+image:https://img.shields.io/badge/License-PMPL--1.0-blue.svg[License: MPL-2.0,link="https://github.com/hyperpolymath/palimpsest-license"]
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen)]()
 
 *High-performance middleware and tooling ecosystem for accelerating [asdf](https://asdf-vm.com/) runtime operations.*
@@ -230,8 +232,8 @@ Security contact: [.well-known/security.txt](.well-known/security.txt)
 == License
 
 Dual-licensed under:
-- *Palimpsest-MPL-1.0 License* - See [LICENSE.txt](LICENSE.txt)
-- *Palimpsest License v0.8* - See [LICENSE.txt](LICENSE.txt)
+- *MPL-2.0-1.0 License* - See [LICENSE.txt](LICENSE.txt)
+- *MPL-2.0 v0.8* - See [LICENSE.txt](LICENSE.txt)
 
 You may use this project under either license.
 

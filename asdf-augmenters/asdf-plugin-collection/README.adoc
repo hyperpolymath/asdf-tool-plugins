@@ -1,5 +1,6 @@
-= asdf-plugin-collection
 // SPDX-License-Identifier: MPL-2.0
+// Copyright (c) Jonathan D.A. Jewell <j.d.a.jewell@open.ac.uk>
+= asdf-plugin-collection
 :author: Jonathan D.A. Jewell <j.d.a.jewell@open.ac.uk>
 
 Monorepo of asdf version manager plugins.

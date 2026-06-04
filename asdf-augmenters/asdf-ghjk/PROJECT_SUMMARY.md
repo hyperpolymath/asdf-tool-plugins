@@ -1,3 +1,7 @@
+<!--
+SPDX-License-Identifier: MPL-2.0
+Copyright (c) Jonathan D.A. Jewell <j.d.a.jewell@open.ac.uk>
+-->
 # asdf-ghjk: Complete Project Summary
 
 **Branch**: `claude/create-claude-md-0185REoNFa5vvHxsmFjiaNKc`
@@ -461,7 +465,7 @@ Use this to verify the project state:
 
 Dual licensed under:
 - MIT License (OSI-approved, permissive)
-- Palimpsest License v0.8 (philosophical, permissive)
+- MPL-2.0 v0.8 (philosophical, permissive)
 
 Users may choose either license.
 

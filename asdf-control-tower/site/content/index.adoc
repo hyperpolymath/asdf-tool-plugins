@@ -1,4 +1,5 @@
 // SPDX-License-Identifier: MPL-2.0
+// Copyright (c) Jonathan D.A. Jewell <j.d.a.jewell@open.ac.uk>
 = hyperpolymath asdf Ecosystem
 :description: A curated collection of asdf plugins for modern development workflows
 :keywords: asdf, version manager, plugins, polyglot, development tools

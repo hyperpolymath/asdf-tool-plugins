@@ -1,6 +1,10 @@
+<!--
+SPDX-License-Identifier: MPL-2.0
+Copyright (c) Jonathan D.A. Jewell <j.d.a.jewell@open.ac.uk>
+-->
 # asdf-ui-plugin
 
-image:https://img.shields.io/badge/License-PMPL--1.0-blue.svg[License: PMPL-1.0,link="https://github.com/hyperpolymath/palimpsest-license"]
+image:https://img.shields.io/badge/License-PMPL--1.0-blue.svg[License: MPL-2.0,link="https://github.com/hyperpolymath/palimpsest-license"]
 image:https://img.shields.io/badge/Philosophy-Palimpsest-indigo.svg[Palimpsest,link="https://github.com/hyperpolymath/palimpsest-license"]
 
 Visual user interface for the [asdf](https://asdf-vm.com) version manager ecosystem.
@@ -33,7 +37,7 @@ Visual user interface for the [asdf](https://asdf-vm.com) version manager ecosys
 
 ## License
 
-Licensed under the [Palimpsest-MPL License (PMPL-1.0)](LICENSE).
+Licensed under the [MPL-2.0 License (MPL-2.0)](LICENSE).
 
 ---
 

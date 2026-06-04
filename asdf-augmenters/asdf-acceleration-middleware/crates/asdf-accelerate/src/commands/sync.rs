@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: MPL-2.0
+// Copyright (c) Jonathan D.A. Jewell <j.d.a.jewell@open.ac.uk>
 //! Plugin sync command
 //!
 //! Synchronizes all plugins by fetching latest updates from their repositories.

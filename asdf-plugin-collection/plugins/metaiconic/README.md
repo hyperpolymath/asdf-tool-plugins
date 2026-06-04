@@ -1,6 +1,10 @@
+<!--
+SPDX-License-Identifier: MPL-2.0
+Copyright (c) Jonathan D.A. Jewell <j.d.a.jewell@open.ac.uk>
+-->
 # asdf-metaiconic-plugin
 
-image:https://img.shields.io/badge/License-PMPL--1.0-blue.svg[License: PMPL-1.0,link="https://github.com/hyperpolymath/palimpsest-license"]
+image:https://img.shields.io/badge/License-PMPL--1.0-blue.svg[License: MPL-2.0,link="https://github.com/hyperpolymath/palimpsest-license"]
 image:https://img.shields.io/badge/Philosophy-Palimpsest-indigo.svg[Palimpsest,link="https://github.com/hyperpolymath/palimpsest-license"]
 
 Central metadata registry and discovery layer for the [asdf](https://asdf-vm.com) plugin ecosystem.
@@ -33,7 +37,7 @@ Central metadata registry and discovery layer for the [asdf](https://asdf-vm.com
 
 ## License
 
-Licensed under the [Palimpsest-MPL License (PMPL-1.0)](LICENSE).
+Licensed under the [MPL-2.0 License (MPL-2.0)](LICENSE).
 
 ---
 

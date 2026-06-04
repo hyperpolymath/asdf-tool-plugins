@@ -12,6 +12,7 @@ jobs:
   mirror-gitlab:
     name: Mirror to GitLab
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     if: vars.GITLAB_MIRROR_ENABLED == 'true'
     steps:
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v4
@@ -30,6 +31,7 @@ jobs:
   mirror-bitbucket:
     name: Mirror to Bitbucket
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     if: vars.BITBUCKET_MIRROR_ENABLED == 'true'
     steps:
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v4

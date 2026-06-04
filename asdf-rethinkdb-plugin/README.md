@@ -1,8 +1,12 @@
+<!--
+SPDX-License-Identifier: MPL-2.0
+Copyright (c) Jonathan D.A. Jewell <j.d.a.jewell@open.ac.uk>
+-->
 # asdf-rethinkdb
 
 [![Build](https://github.com/hyperpolymath/asdf-rethinkdb-plugin/actions/workflows/build.yml/badge.svg)](https://github.com/hyperpolymath/asdf-rethinkdb-plugin/actions/workflows/build.yml)
 [![Lint](https://github.com/hyperpolymath/asdf-rethinkdb-plugin/actions/workflows/lint.yml/badge.svg)](https://github.com/hyperpolymath/asdf-rethinkdb-plugin/actions/workflows/lint.yml)
-image:https://img.shields.io/badge/License-PMPL--1.0-blue.svg[License: PMPL-1.0,link="https://github.com/hyperpolymath/palimpsest-license"]
+image:https://img.shields.io/badge/License-PMPL--1.0-blue.svg[License: MPL-2.0,link="https://github.com/hyperpolymath/palimpsest-license"]
 
 [asdf](https://asdf-vm.com) plugin for [RethinkDB](https://rethinkdb.com).
 
@@ -65,7 +69,7 @@ Contributions welcome! Read the [contributing guidelines](CONTRIBUTING.adoc) fir
 
 ## License
 
-Licensed under the [Palimpsest-MPL License (PMPL-1.0)](LICENSE).
+Licensed under the [MPL-2.0 License (MPL-2.0)](LICENSE).
 
 ---
 

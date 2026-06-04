@@ -1,6 +1,8 @@
+// SPDX-License-Identifier: MPL-2.0
+// Copyright (c) Jonathan D.A. Jewell <j.d.a.jewell@open.ac.uk>
 = asdf-ada
 
-image:https://img.shields.io/badge/License-PMPL--1.0-blue.svg[License: PMPL-1.0,link="https://github.com/hyperpolymath/palimpsest-license"]
+image:https://img.shields.io/badge/License-PMPL--1.0-blue.svg[License: MPL-2.0,link="https://github.com/hyperpolymath/palimpsest-license"]
 image:https://img.shields.io/badge/Philosophy-Palimpsest-indigo.svg[Palimpsest,link="https://github.com/hyperpolymath/palimpsest-license"]
 
 
@@ -608,7 +610,7 @@ This plugin is part of the **Hyperpolymath asdf ecosystem**, a layered architect
 
 == License
 
-This project is licensed under the Palimpsest-MPL License v3.0 or later.
+This project is licensed under the MPL-2.0 License v3.0 or later.
 See the link:LICENSE[LICENSE] file for details.
 
 [source]

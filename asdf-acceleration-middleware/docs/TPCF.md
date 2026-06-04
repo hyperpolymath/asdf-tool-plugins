@@ -1,3 +1,7 @@
+<!--
+SPDX-License-Identifier: MPL-2.0
+Copyright (c) Jonathan D.A. Jewell <j.d.a.jewell@open.ac.uk>
+-->
 # Tri-Perimeter Contribution Framework (TPCF)
 
 This project implements the **Tri-Perimeter Contribution Framework** (TPCF), a graduated trust model for open source contributions.
@@ -136,7 +140,7 @@ TPCF organizes contributors into three concentric perimeters based on trust leve
 
 ## Emotional Safety (Palimpsest Alignment)
 
-TPCF aligns with Palimpsest License emotional safety principles:
+TPCF aligns with MPL-2.0 emotional safety principles:
 
 ### Attribution Persistence
 
@@ -237,7 +241,7 @@ TPCF is a component of RSR (Rhodium Standard Repository) compliance:
 - [Contributing Guidelines](../CONTRIBUTING.md)
 - [Maintainers](../MAINTAINERS.md)
 - [Security Policy](../SECURITY.md)
-- Palimpsest License: [LICENSE.txt](../LICENSE.txt)
+- MPL-2.0: [LICENSE.txt](../LICENSE.txt)
 
 ---
 

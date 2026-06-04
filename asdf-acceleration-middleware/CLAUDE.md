@@ -1,3 +1,7 @@
+<!--
+SPDX-License-Identifier: MPL-2.0
+Copyright (c) Jonathan D.A. Jewell <j.d.a.jewell@open.ac.uk>
+-->
 # CLAUDE.md
 
 This document provides context and guidelines for Claude Code when working with the asdf-acceleration-middleware project.

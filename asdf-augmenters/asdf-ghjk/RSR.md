@@ -1,3 +1,7 @@
+<!--
+SPDX-License-Identifier: MPL-2.0
+Copyright (c) Jonathan D.A. Jewell <j.d.a.jewell@open.ac.uk>
+-->
 # RSR Framework Compliance
 
 **Repository**: asdf-ghjk
@@ -266,7 +270,7 @@ To verify RSR compliance:
 
 - [RSR Framework](https://github.com/Hyperpolymath/rhodium-minimal)
 - [TPCF Documentation](https://github.com/Hyperpolymath/rhodium-minimal)
-- [Palimpsest License](https://github.com/Hyperpolymath/palimpsest-license)
+- [MPL-2.0](https://github.com/Hyperpolymath/palimpsest-license)
 
 ---
 

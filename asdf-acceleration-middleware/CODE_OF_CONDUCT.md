@@ -1,3 +1,7 @@
+<!--
+SPDX-License-Identifier: MPL-2.0
+Copyright (c) Jonathan D.A. Jewell <j.d.a.jewell@open.ac.uk>
+-->
 # Code of Conduct
 
 ## Our Pledge
@@ -29,9 +33,9 @@ We pledge to act and interact in ways that contribute to an open, welcoming, div
 - ❌ Dismissing or attacking minority viewpoints
 - ❌ Pattern of boundary violations
 
-## Emotional Safety (Palimpsest License Principles)
+## Emotional Safety (MPL-2.0 Principles)
 
-In alignment with the Palimpsest License emotional safety clause:
+In alignment with the MPL-2.0 emotional safety clause:
 
 ### Attribution and Recognition
 
@@ -114,7 +118,7 @@ Community leaders will follow these Community Impact Guidelines in determining t
 
 This Code of Conduct is adapted from:
 - [Contributor Covenant](https://www.contributor-covenant.org), version 2.1
-- Palimpsest License emotional safety principles
+- MPL-2.0 emotional safety principles
 - [Rust Code of Conduct](https://www.rust-lang.org/policies/code-of-conduct)
 
 ## Questions
