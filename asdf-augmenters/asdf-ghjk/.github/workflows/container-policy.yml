@@ -1,9 +1,7 @@
 # SPDX-License-Identifier: MPL-2.0
 name: Container Policy
 on: [push, pull_request]
-
 permissions: read-all
-
 jobs:
   check:
     runs-on: ubuntu-latest

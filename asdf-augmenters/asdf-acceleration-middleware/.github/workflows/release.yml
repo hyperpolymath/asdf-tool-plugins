@@ -1,14 +1,11 @@
 # SPDX-License-Identifier: MPL-2.0
 name: Release
-
 on:
   push:
     tags:
       - 'v*.*.*'
-
 env:
   CARGO_TERM_COLOR: always
-
 jobs:
   build:
     name: Build ${{ matrix.target }}
@@ -35,20 +32,15 @@ jobs:
           - os: windows-latest
             target: x86_64-pc-windows-msvc
             use-cross: false
-
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
-
       - uses: dtolnay/rust-toolchain@stable
         with:
           targets: ${{ matrix.target }}
-
       - uses: Swatinem/rust-cache@779680da715d629ac1d338a641029a2f4372abb5 # v2
-
       - name: Install cross
         if: matrix.use-cross
         run: cargo install cross
-
       - name: Build
         run: |
           if [ "${{ matrix.use-cross }}" = "true" ]; then
@@ -57,7 +49,6 @@ jobs:
             cargo build --release --target ${{ matrix.target }}
           fi
         shell: bash
-
       - name: Package
         run: |
           mkdir -p release
@@ -75,12 +66,10 @@ jobs:
             tar -czf release/asdf-acceleration-middleware-${{ matrix.target }}.tar.gz -C release .
           fi
         shell: bash
-
       - uses: actions/upload-artifact@ea165f8d65b6db9a8b71b5c2d1a090c0daf9c8bb # v4
         with:
           name: ${{ matrix.target }}
           path: release/*
-
   release:
     name: Create Release
     needs: build
@@ -88,11 +77,9 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
-
       - uses: actions/download-artifact@v3
         with:
           path: artifacts
-
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
@@ -100,7 +87,6 @@ jobs:
           generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
   publish:
     name: Publish to crates.io
     needs: release
