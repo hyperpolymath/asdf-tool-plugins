@@ -1,7 +1,7 @@
 [![Sponsor](https://img.shields.io/badge/Sponsor-%E2%9D%A4-pink?logo=github)](https://github.com/sponsors/hyperpolymath)
 
 = asdf Tool Plugins
-// SPDX-License-Identifier: MPL-2.0
+// SPDX-License-Identifier: CC-BY-SA-4.0
 :author: Jonathan D.A. Jewell <6759885+hyperpolymath@users.noreply.github.com>
 :revdate: 2026-05-26
 
