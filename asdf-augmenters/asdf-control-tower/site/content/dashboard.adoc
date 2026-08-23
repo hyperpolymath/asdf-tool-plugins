@@ -130,7 +130,7 @@ toc::[]
 
 | asdf-ada-plugin | ✓ | ✓ | 0.1.0
 | asdf-fortran-plugin | ✓ | ✓ | 0.1.0
-| asdf-rescript-plugin | ✓ | ✓ | 0.1.0
+| asdf-affinescript-plugin | ✓ | ✓ | 0.1.0
 | asdf-ocaml-plugin | ✓ | ✓ | 0.1.0
 | asdf-vlang-plugin | ✓ | ✓ | 0.1.0
 | asdf-cobol-plugin | ✓ | ✓ | 0.1.0

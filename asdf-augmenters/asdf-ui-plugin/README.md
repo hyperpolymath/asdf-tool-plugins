@@ -21,7 +21,7 @@ Visual user interface for the [asdf](https://asdf-vm.com) version manager ecosys
 ## Technology Stack
 
 - **UI Framework**: Tauri 2.0+ (Rust backend + web frontend)
-- **Frontend**: ReScript (type-safe JavaScript)
+- **Frontend**: AffineScript (type-safe JavaScript)
 - **Styling**: TailwindCSS
 
 ## Related Projects

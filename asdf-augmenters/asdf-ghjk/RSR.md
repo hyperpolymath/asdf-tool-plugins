@@ -123,7 +123,7 @@ See CONTRIBUTING.md and MAINTAINERS.md for details.
 
 - [x] Makefile - GNU Make automation
 - [x] Justfile - Modern task runner
-- [x] flake.nix - Nix reproducible builds
+- [x] flake.guix - Guix reproducible builds
 - [x] Build documentation
 - [x] Development setup script
 - [x] Dependency checks
@@ -225,7 +225,7 @@ See CONTRIBUTING.md and MAINTAINERS.md for details.
 Beyond basic RSR compliance, this project demonstrates:
 
 1. **Comprehensive Documentation**: 14 guides covering every aspect
-2. **Multiple Build Systems**: Make, just, and Nix for maximum flexibility
+2. **Multiple Build Systems**: Make, just, and Guix for maximum flexibility
 3. **Developer Experience**: Setup scripts, doctor tool, cleanup utilities
 4. **Performance Optimization**: Caching, benchmarking, profiling
 5. **Shell Completions**: Bash and Zsh for better UX

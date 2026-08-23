@@ -113,7 +113,7 @@ asdf-security update-db
 Per the Hyperpolymath Language Policy:
 
 * **Primary languages**: Bash/POSIX Shell (for asdf plugin scripts)
-* **Package management**: Guix (primary), Nix (fallback)
+* **Package management**: Guix (primary), Guix (fallback)
 * **Security**: SHA256+ hashing, HTTPS only, no hardcoded secrets, SHA-pinned dependencies
 * **Code quality**: ShellCheck linting, SPDX license headers
 

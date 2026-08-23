@@ -62,7 +62,7 @@ This project has achieved the highest possible RSR (Rhodium Standard Repository)
 ### Build Systems (Triple Support)
 1. **Makefile** - Traditional GNU Make automation
 2. **justfile** - Modern task runner with 50+ recipes
-3. **flake.nix** - Nix reproducible builds
+3. **flake.guix** - Guix reproducible builds
 
 ### Developer Tools
 - ✅ `scripts/setup-dev.sh` - Development environment setup
@@ -201,7 +201,7 @@ asdf-ghjk/ (60 files)
     ├── RSR.md
     ├── Makefile
     ├── Justfile
-    ├── flake.nix
+    ├── flake.guix
     ├── .editorconfig
     ├── .shellcheckrc
     ├── .pre-commit-config.yaml
@@ -304,7 +304,7 @@ just lint
 | RSR Level | Bronze | **Platinum** | Exceeds reference |
 | Documentation | Basic | Comprehensive | 14 vs 7 docs |
 | Testing | Unit only | Unit + Integration | BATS suite |
-| Build Systems | 2 (just, Nix) | **3** (Make, just, Nix) | Triple support |
+| Build Systems | 2 (just, Guix) | **3** (Make, just, Guix) | Triple support |
 | .well-known | 3 files | **3 files** | RFC compliant |
 | TPCF | Perimeter 3 | **Perimeter 3** | Community Sandbox |
 | Language | Rust (100 LOC) | Bash (~7,200 LOC) | Production-scale |
@@ -321,7 +321,7 @@ just lint
 1. **Triple Build System Support**
    - Traditional Make for compatibility
    - Modern just for developer experience
-   - Nix for reproducibility
+   - Guix for reproducibility
 
 2. **Comprehensive Tooling**
    - Performance benchmarking
@@ -364,7 +364,7 @@ just lint
 
 ### Developer Experience
 - **Setup Time**: < 5 minutes
-- **Build Systems**: 3 (Make, just, Nix)
+- **Build Systems**: 3 (Make, just, Guix)
 - **Automation**: 50+ recipes
 - **Diagnostics**: Automated troubleshooting
 

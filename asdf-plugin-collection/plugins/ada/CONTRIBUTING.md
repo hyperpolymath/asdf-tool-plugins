@@ -2,8 +2,8 @@
 git clone https://github.com/hyperpolymath/asdf-tool-plugins.git
 cd asdf-tool-plugins
 
-# Using Nix (recommended for reproducibility)
-nix develop
+# Using Guix (recommended for reproducibility)
+guix develop
 
 # Or using toolbox/distrobox
 toolbox create asdf-tool-plugins-dev
@@ -41,7 +41,7 @@ asdf-tool-plugins/
 ├── MAINTAINERS.md
 ├── README.adoc
 ├── SECURITY.md
-├── flake.nix            # Nix flake (Perimeter 1)
+├── flake.guix            # Guix flake (Perimeter 1)
 └── Justfile             # Task runner (Perimeter 1)
 ```
 

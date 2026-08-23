@@ -82,7 +82,7 @@ asdf-acceleration-middleware/
 ├── examples/              # Example configurations
 ├── .well-known/           # RFC 9116, AI policies
 ├── Justfile               # Build automation
-├── flake.nix             # Nix reproducible builds
+├── flake.guix             # Guix reproducible builds
 └── Cargo.toml            # Workspace configuration
 ```
 
@@ -201,7 +201,7 @@ This project adheres to the *Rhodium Standard Repository (RSR)* framework:
 - ✅ *Memory Safety*: Ownership model, zero `unsafe` blocks in core
 - ✅ *Offline-First*: No mandatory network calls
 - ✅ *Complete Documentation*: README, CONTRIBUTING, CODE_OF_CONDUCT, SECURITY
-- ✅ *Build Reproducibility*: Nix flakes, locked dependencies
+- ✅ *Build Reproducibility*: Guix flakes, locked dependencies
 - ✅ *CI/CD*: Automated testing and validation
 - ✅ *Security*: `.well-known/security.txt` (RFC 9116)
 - ✅ *TPCF*: Tri-Perimeter Contribution Framework (Community Sandbox)

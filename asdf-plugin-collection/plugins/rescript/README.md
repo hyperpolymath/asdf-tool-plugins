@@ -1,10 +1,10 @@
-# asdf-rescript
+# asdf-affinescript
 
-[![Build](https://github.com/hyperpolymath/asdf-rescript-plugin/actions/workflows/build.yml/badge.svg)](https://github.com/hyperpolymath/asdf-rescript-plugin/actions/workflows/build.yml)
-[![Lint](https://github.com/hyperpolymath/asdf-rescript-plugin/actions/workflows/lint.yml/badge.svg)](https://github.com/hyperpolymath/asdf-rescript-plugin/actions/workflows/lint.yml)
+[![Build](https://github.com/hyperpolymath/asdf-affinescript-plugin/actions/workflows/build.yml/badge.svg)](https://github.com/hyperpolymath/asdf-affinescript-plugin/actions/workflows/build.yml)
+[![Lint](https://github.com/hyperpolymath/asdf-affinescript-plugin/actions/workflows/lint.yml/badge.svg)](https://github.com/hyperpolymath/asdf-affinescript-plugin/actions/workflows/lint.yml)
 image:https://img.shields.io/badge/License-PMPL--1.0-blue.svg[License: PMPL-1.0,link="https://github.com/hyperpolymath/palimpsest-license"]
 
-[asdf](https://asdf-vm.com) plugin for [ReScript](https://rescript-lang.org).
+[asdf](https://asdf-vm.com) plugin for [AffineScript](https://affinescript-lang.org).
 
 Type-safe JavaScript.
 
@@ -25,23 +25,23 @@ Type-safe JavaScript.
 Plugin:
 
 ```bash
-asdf plugin add rescript https://github.com/hyperpolymath/asdf-rescript-plugin.git
+asdf plugin add affinescript https://github.com/hyperpolymath/asdf-affinescript-plugin.git
 ```
 
-rescript:
+affinescript:
 
 ```bash
 # Show all installable versions
-asdf list-all rescript
+asdf list-all affinescript
 
 # Install specific version
-asdf install rescript latest
+asdf install affinescript latest
 
 # Set a version globally (in your ~/.tool-versions file)
-asdf global rescript latest
+asdf global affinescript latest
 
-# Now rescript commands are available
-rescript --version
+# Now affinescript commands are available
+affinescript --version
 ```
 
 Check [asdf](https://asdf-vm.com/guide/getting-started.html) readme for more instructions.
@@ -50,13 +50,13 @@ Check [asdf](https://asdf-vm.com/guide/getting-started.html) readme for more ins
 
 ```bash
 # List installed versions
-asdf list rescript
+asdf list affinescript
 
 # Set local version for current directory
-asdf local rescript <version>
+asdf local affinescript <version>
 
 # Uninstall a version
-asdf uninstall rescript <version>
+asdf uninstall affinescript <version>
 ```
 
 ## Contributing

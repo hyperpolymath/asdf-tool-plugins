@@ -1,5 +1,5 @@
 
-# RESCRIPT ABI/FFI Documentation
+# AFFINESCRIPT ABI/FFI Documentation
 
 ## Overview
 
@@ -25,7 +25,7 @@ This library follows the **Hyperpolymath RSR Standard** for ABI and FFI design:
                   ▼
 ┌─────────────────────────────────────────────┐
 │  C Headers (auto-generated)                 │
-│  generated/abi/rescript.h                │
+│  generated/abi/affinescript.h                │
 └─────────────────┬───────────────────────────┘
                   │
                   │ imported by
@@ -42,14 +42,14 @@ This library follows the **Hyperpolymath RSR Standard** for ABI and FFI design:
                   ▼
 ┌─────────────────────────────────────────────┐
 │  Any Language via C ABI                     │
-│  - Rust, ReScript, Julia, Python, etc.     │
+│  - Rust, AffineScript, Julia, Python, etc.     │
 └─────────────────────────────────────────────┘
 ```
 
 ## Directory Structure
 
 ```
-rescript/
+affinescript/
 ├── src/
 │   ├── abi/                    # ABI definitions (Idris2)
 │   │   ├── Types.idr           # Core type definitions with proofs
@@ -66,15 +66,15 @@ rescript/
 │       ├── test/
 │       │   └── integration_test.zig
 │       └── include/
-│           └── rescript.h   # C header (optional, can be generated)
+│           └── affinescript.h   # C header (optional, can be generated)
 │
 ├── generated/                  # Auto-generated files
 │   └── abi/
-│       └── rescript.h       # Generated from Idris2 ABI
+│       └── affinescript.h       # Generated from Idris2 ABI
 │
 └── bindings/                   # Language-specific wrappers (optional)
     ├── rust/
-    ├── rescript/
+    ├── affinescript/
     └── julia/
 ```
 
@@ -198,7 +198,7 @@ zig build test                    # Run tests
 
 ```bash
 cd src/abi
-idris2 --cg c-header Types.idr -o ../../generated/abi/rescript.h
+idris2 --cg c-header Types.idr -o ../../generated/abi/affinescript.h
 ```
 
 ### Cross-Compile
@@ -221,7 +221,7 @@ zig build -Dtarget=x86_64-windows
 ### From C
 
 ```c
-#include "rescript.h"
+#include "affinescript.h"
 
 int main() {
     void* handle = rescript_init();
@@ -246,7 +246,7 @@ gcc -o example example.c -lrescript -L./zig-out/lib
 ### From Idris2
 
 ```idris
-import RESCRIPT.ABI.Foreign
+import AFFINESCRIPT.ABI.Foreign
 
 main : IO ()
 main = do
@@ -263,7 +263,7 @@ main = do
 ### From Rust
 
 ```rust
-#[link(name = "rescript")]
+#[link(name = "affinescript")]
 extern "C" {
     fn rescript_init() -> *mut std::ffi::c_void;
     fn rescript_free(handle: *mut std::ffi::c_void);
@@ -354,7 +354,7 @@ When modifying the ABI/FFI:
 
 2. **Generate C header**
    ```bash
-   idris2 --cg c-header src/abi/Types.idr -o generated/abi/rescript.h
+   idris2 --cg c-header src/abi/Types.idr -o generated/abi/affinescript.h
    ```
 
 3. **Update FFI implementation** (`ffi/zig/src/main.zig`)

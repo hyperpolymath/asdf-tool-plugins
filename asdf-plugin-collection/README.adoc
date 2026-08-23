@@ -60,7 +60,7 @@ Monorepo of asdf version manager plugins.
 | `pollen` | asdf-pollen-plugin
 | `pomerium` | asdf-pomerium-plugin
 | `rekor` | asdf-rekor-plugin
-| `rescript` | asdf-rescript-plugin
+| `affinescript` | asdf-affinescript-plugin
 | `restic` | asdf-restic-plugin
 | `rethinkdb` | asdf-rethinkdb-plugin
 | `security` | asdf-security-plugin

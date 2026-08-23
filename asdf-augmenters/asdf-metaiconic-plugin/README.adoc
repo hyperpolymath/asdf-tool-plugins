@@ -81,7 +81,7 @@ registry/
 | network | coredns, envoy, pomerium, linkerd
 | crypto | step-ca, cfssl, lego, rekor, fulcio
 | build | apko, melange, restic, borg, hashicorp
-| language | ada, fortran, rescript, ocaml, vlang
+| language | ada, fortran, affinescript, ocaml, vlang
 | ssg | casket-ssg, zola, cobalt, mdbook
 | webserver | httpd, varnish, openlitespeed
 |===

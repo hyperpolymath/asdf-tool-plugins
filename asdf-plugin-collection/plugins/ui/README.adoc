@@ -88,11 +88,11 @@ See link:ROADMAP.adoc[ROADMAP.adoc] for development history and future plans.
 
 This project follows the **Hyperpolymath Language Policy**:
 
-* *Primary*: ReScript, Rust, Deno
+* *Primary*: AffineScript, Rust, Deno
 * *Mobile*: Tauri 2.0+ or Dioxus (no Kotlin/Swift)
 * *Backend*: Gleam (BEAM or JS target)
 * *Config*: Nickel, Guile Scheme
-* *Package Management*: Guix (primary), Nix (fallback)
+* *Package Management*: Guix (primary), Guix (fallback)
 
 See `.claude/CLAUDE.md` for full policy details.
 

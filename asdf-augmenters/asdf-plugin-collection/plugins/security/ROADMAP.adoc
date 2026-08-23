@@ -48,7 +48,7 @@ The plugin is complete with all core functionality:
 * [ ] GPG signature verification for plugin downloads
 * [ ] Multiple security tool support (trivy, grype, etc.)
 * [ ] Platform detection and binary selection
-* [ ] Integration with Guix/Nix for hermetic installs
+* [ ] Integration with Guix/Guix for hermetic installs
 
 === Phase 4: Enterprise Features (Planned)
 

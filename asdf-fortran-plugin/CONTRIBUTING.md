@@ -2,8 +2,8 @@
 git clone https://github.com/hyperpolymath/asdf-fortran-plugin.git
 cd asdf-fortran-plugin
 
-# Using Nix (recommended for reproducibility)
-nix develop
+# Using Guix (recommended for reproducibility)
+guix develop
 
 # Or using toolbox/distrobox
 toolbox create asdf-fortran-plugin-dev
@@ -41,7 +41,7 @@ asdf-fortran-plugin/
 ├── MAINTAINERS.md
 ├── README.adoc
 ├── SECURITY.md
-├── flake.nix            # Nix flake (Perimeter 1)
+├── flake.guix            # Guix flake (Perimeter 1)
 └── Justfile             # Task runner (Perimeter 1)
 ```
 

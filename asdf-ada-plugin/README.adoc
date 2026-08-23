@@ -481,7 +481,7 @@ This roadmap outlines the planned development phases for `asdf-ada`.
 * [ ] GNAT Studio integration notes
 * [ ] Docker/container image publishing
 * [ ] CI/CD examples (GitHub Actions, GitLab CI, Jenkins)
-* [ ] Nix flake support
+* [ ] Guix flake support
 
 === Phase 6: Enterprise & Polish (v1.0.0) icon:building[]
 
