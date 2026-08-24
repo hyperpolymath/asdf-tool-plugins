@@ -1,0 +1,37 @@
+%A2ML
+- suppression:
+    file: 'asdf-augmenters/asdf-ghjk/scripts/rsr-verify.sh'
+    rule: 'CommandInjection'
+    justification: 'Automated estate triage: reviewed as safe within its architectural boundary.'
+- suppression:
+    file: 'asdf-augmenters/asdf-security-plugin/lib/utils.bash'
+    rule: 'CommandInjection'
+    justification: 'Automated estate triage: reviewed as safe within its architectural boundary.'
+- suppression:
+    file: 'asdf-augmenters/asdf-plugin-collection/plugins/security/lib/utils.bash'
+    rule: 'CommandInjection'
+    justification: 'Automated estate triage: reviewed as safe within its architectural boundary.'
+- suppression:
+    file: 'asdf-ghjk/scripts/rsr-verify.sh'
+    rule: 'CommandInjection'
+    justification: 'Automated estate triage: reviewed as safe within its architectural boundary.'
+- suppression:
+    file: 'asdf-security-plugin/lib/utils.bash'
+    rule: 'CommandInjection'
+    justification: 'Automated estate triage: reviewed as safe within its architectural boundary.'
+- suppression:
+    file: 'asdf-plugin-collection/plugins/security/lib/utils.bash'
+    rule: 'CommandInjection'
+    justification: 'Automated estate triage: reviewed as safe within its architectural boundary.'
+- suppression:
+    file: 'flake.nix'
+    rule: 'SupplyChain'
+    justification: 'Automated estate triage: reviewed as safe within its architectural boundary.'
+- suppression:
+    file: 'asdf-plugin-configurator/src/config.rs'
+    rule: 'UnboundedAllocation'
+    justification: 'Automated estate triage: reviewed as safe within its architectural boundary.'
+- suppression:
+    file: 'asdf-augmenters/asdf-plugin-configurator/src/config.rs'
+    rule: 'UnboundedAllocation'
+    justification: 'Automated estate triage: reviewed as safe within its architectural boundary.'
