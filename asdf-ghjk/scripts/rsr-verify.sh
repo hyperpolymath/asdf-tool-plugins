@@ -67,13 +67,9 @@ check "CODE_OF_CONDUCT.adoc exists" "[[ -f CODE_OF_CONDUCT.adoc ]]"
 check "MAINTAINERS exists" "[[ -f MAINTAINERS.adoc ]]"
 check "SECURITY.adoc exists" "[[ -f SECURITY.adoc ]]"
 check "CHANGELOG exists" "[[ -f CHANGELOG.adoc ]]"
-check "ARCHITECTURE exists" "[[ -f docs/ARCHITECTURE.md ]] || [[ -f docs/ARCHITECTURE.adoc ]]"
-check "API_REFERENCE exists" "[[ -f docs/API_REFERENCE.md ]] || [[ -f docs/API_REFERENCE.adoc ]]"
-check "FAQ exists" "[[ -f docs/FAQ.md ]] || [[ -f docs/FAQ.adoc ]]"
-check "QUICKSTART exists" "[[ -f docs/QUICKSTART.md ]] || [[ -f docs/QUICKSTART.adoc ]]"
-check "TROUBLESHOOTING exists" "[[ -f docs/TROUBLESHOOTING.md ]] || [[ -f docs/TROUBLESHOOTING.adoc ]]"
-check "EXAMPLES exists" "[[ -f docs/EXAMPLES.md ]] || [[ -f docs/EXAMPLES.adoc ]]"
-check "MIGRATION exists" "[[ -f docs/MIGRATION.md ]] || [[ -f docs/MIGRATION.adoc ]]"
+for doc in ARCHITECTURE API_REFERENCE FAQ QUICKSTART TROUBLESHOOTING EXAMPLES MIGRATION; do
+  check "${doc} exists" "[[ -f docs/${doc}.md ]] || [[ -f docs/${doc}.adoc ]]"
+done
 
 # =============================================================================
 # Category 2: Licensing
