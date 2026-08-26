@@ -65,7 +65,7 @@ check "README is comprehensive (>100 lines)" "[[ -f README.adoc ]] && [[ \$(wc -
 check "CONTRIBUTING exists" "[[ -f CONTRIBUTING.adoc ]]"
 check "CODE_OF_CONDUCT.adoc exists" "[[ -f CODE_OF_CONDUCT.adoc ]]"
 check "MAINTAINERS exists" "[[ -f MAINTAINERS.adoc ]]"
-check "SECURITY.adoc exists" "[[ -f SECURITY.adoc ]]"
+check "SECURITY exists" "[[ -f SECURITY.adoc ]]"
 check "CHANGELOG exists" "[[ -f CHANGELOG.adoc ]]"
 for doc in ARCHITECTURE API_REFERENCE FAQ QUICKSTART TROUBLESHOOTING EXAMPLES MIGRATION; do
   check "${doc} exists" "[[ -f docs/${doc}.md ]] || [[ -f docs/${doc}.adoc ]]"
