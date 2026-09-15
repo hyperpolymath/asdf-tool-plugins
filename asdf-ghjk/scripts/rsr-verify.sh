@@ -65,15 +65,11 @@ check "README is comprehensive (>100 lines)" "[[ -f README.adoc ]] && [[ \$(wc -
 check "CONTRIBUTING exists" "[[ -f CONTRIBUTING.adoc ]]"
 check "CODE_OF_CONDUCT.adoc exists" "[[ -f CODE_OF_CONDUCT.adoc ]]"
 check "MAINTAINERS exists" "[[ -f MAINTAINERS.adoc ]]"
-check "SECURITY.adoc exists" "[[ -f SECURITY.adoc ]]"
+check "SECURITY exists" "[[ -f SECURITY.adoc ]]"
 check "CHANGELOG exists" "[[ -f CHANGELOG.adoc ]]"
-check "ARCHITECTURE.md exists" "[[ -f docs/ARCHITECTURE.md ]]"
-check "API_REFERENCE.md exists" "[[ -f docs/API_REFERENCE.md ]]"
-check "FAQ.md exists" "[[ -f docs/FAQ.md ]]"
-check "QUICKSTART.md exists" "[[ -f docs/QUICKSTART.md ]]"
-check "TROUBLESHOOTING.md exists" "[[ -f docs/TROUBLESHOOTING.md ]]"
-check "EXAMPLES.md exists" "[[ -f docs/EXAMPLES.md ]]"
-check "MIGRATION.md exists" "[[ -f docs/MIGRATION.md ]]"
+for doc in ARCHITECTURE API_REFERENCE FAQ QUICKSTART TROUBLESHOOTING EXAMPLES MIGRATION; do
+  check "${doc} exists" "[[ -f docs/${doc}.md ]] || [[ -f docs/${doc}.adoc ]]"
+done
 
 # =============================================================================
 # Category 2: Licensing
