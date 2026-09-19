@@ -62,7 +62,7 @@ section "Category 1: Documentation"
 
 check "README exists" "[[ -f README.adoc ]]"
 check "README is comprehensive (>100 lines)" "[[ -f README.adoc ]] && [[ \$(wc -l < README.adoc) -gt 100 ]]"
-check "CONTRIBUTING exists" "[[ -f CONTRIBUTING.adoc ]]"
+check "CONTRIBUTING exists" "[[ -f ../../.github/CONTRIBUTING.md ]]"
 check "CODE_OF_CONDUCT.adoc exists" "[[ -f CODE_OF_CONDUCT.adoc ]]"
 check "MAINTAINERS exists" "[[ -f MAINTAINERS.adoc ]]"
 check "SECURITY exists" "[[ -f SECURITY.adoc ]]"
@@ -99,7 +99,7 @@ check "Input validation present" "grep -q 'ASDF_INSTALL_VERSION' bin/download"
 # =============================================================================
 section "Category 4: Contributing"
 
-check "CONTRIBUTING comprehensive (>50 lines)" "[[ -f CONTRIBUTING.adoc ]] && [[ \$(wc -l < CONTRIBUTING.adoc) -gt 50 ]]"
+check "CONTRIBUTING comprehensive (>50 lines)" "[[ -f ../../.github/CONTRIBUTING.md ]] && [[ \$(wc -l < ../../.github/CONTRIBUTING.md) -gt 50 ]]"
 check "CODE_OF_CONDUCT follows Contributor Covenant" "grep -q 'Contributor Covenant' CODE_OF_CONDUCT.adoc"
 check "Issue templates exist" "[[ -d .github/ISSUE_TEMPLATE ]]"
 check "Bug report template exists" "[[ -f .github/ISSUE_TEMPLATE/bug_report.md ]]"
