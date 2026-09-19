@@ -48,7 +48,7 @@ ls -d */
 
 == Contributing
 
-PRs welcome — see link:CONTRIBUTING.md[CONTRIBUTING.md].
+PRs welcome — see link:.github/CONTRIBUTING.md[CONTRIBUTING.md].
 All commits must be GPG-signed and follow conventional commits
 (per estate-wide policy in `hyperpolymath/standards`).
 
