@@ -48,6 +48,3 @@ jobs:
         run: cargo install cargo-tarpaulin
       - name: Generate coverage
         run: cargo tarpaulin --out Xml
-      - uses: codecov/codecov-action@v3
-        with:
-          files: cobertura.xml
